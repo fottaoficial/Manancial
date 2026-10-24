@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Manancial Styllo | Camisas Personalizadas • Nova Friburgo</title>
+  
+  <!-- Fonte Redonda, Moderna e Marcante -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+          colors: {
+            brand: {
+              navy: '#071B46',
+              electric: '#1264D8',
+              ice: '#EEF4FF',
+              mint: '#E7F8F2',
+              peach: '#FFF3E8',
+              lavender: '#F3EBF9',
+              slate: '#64748B'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
+    input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+    input[type=number] { -moz-appearance: textfield; }
+    .btn-choice.active {
+      border-color: #1264D8 !important;
+      background-color: #EEF4FF !important;
+      color: #1264D8 !important;
+      font-weight: 800 !important;
+      box-shadow: 0 4px 14px rgba(18, 100, 216, 0.12);
+    }
+  </style>
+</head>
+<body class="bg-[#F8FAFC] text-slate-800 antialiased min-h-screen flex flex-col font-sans">
+
+  <!-- CABEÇALHO -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-100 py-3.5 px-4">
+    <div class="max-w-4xl mx-auto flex items-center justify-between">
+      
+      <!-- Logo Minimalista Redesenhado -->
+      <a href="#inicio" class="flex items-center gap-2.5">
+        <div class="w-10 h-10 rounded-2xl bg-brand-navy flex items-center justify-center text-white shadow-md shadow-brand-navy/15">
+          <svg class="w-6 h-6 text-cyan-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 14c2.5-3 5-3 7.5 0s5 3 8.5 0"></path>
+            <path d="M4 9c2.5-3 5-3 7.5 0s5 3 8.5 0"></path>
+          </svg>
+        </div>
+        <div>
+          <span class="block text-base font-black tracking-tight leading-none text-brand-navy">
+            MANANCIAL <span class="text-brand-electric font-black">STYLLO</span>
+          </span>
+          <span class="block text-[11px] font-bold text-slate-400 uppercase tracking-widest mt-0.5">
+            Nova Friburgo • RJ
+          </span>
+        </div>
+      </a>
+
+      <!-- Botão Superior Direto -->
+      <button onclick="scrollToConfig()" class="bg-brand-electric hover:bg-blue-600 active:scale-95 text-white font-extrabold text-xs px-4 py-2.5 rounded-full shadow-md shadow-blue-600/20 transition-all">
+        Fazer Orçamento
+      </button>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    
+    <!-- HERO DIRETO E VISUAL -->
+    <section id="inicio" class="pt-10 pb-8 px-4 text-center">
+      <div class="max-w-2xl mx-auto space-y-4">
+        
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-ice text-brand-electric text-xs font-extrabold">
+          <span class="w-2 h-2 rounded-full bg-brand-electric animate-pulse"></span>
+          Camisas Personalizadas em Nova Friburgo
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl font-black text-brand-navy tracking-tight leading-tight">
+          Sua ideia, <br/>
+          <span class="text-brand-electric">nossa personalização.</span>
+        </h1>
+
+        <p class="text-sm sm:text-base text-slate-500 font-medium max-w-md mx-auto leading-relaxed">
+          Camisas para empresas, uniformes, igrejas e eventos. Monte os itens do seu jeito e receba os valores direto no WhatsApp.
+        </p>
+
+        <div class="pt-2">
+          <button onclick="scrollToConfig()" class="w-full sm:w-auto bg-brand-navy hover:bg-slate-900 active:scale-95 text-white font-extrabold text-base px-8 py-4 rounded-2xl shadow-xl shadow-brand-navy/15 transition-all">
+            Montar Meu Pedido Agora →
+          </button>
+        </div>
+
+        <!-- Tags Pastéis -->
+        <div class="pt-4 flex flex-wrap justify-center gap-2">
+          <span class="px-3.5 py-1.5 rounded-xl bg-brand-ice text-brand-navy text-xs font-bold">🏢 Empresas</span>
+          <span class="px-3.5 py-1.5 rounded-xl bg-brand-mint text-emerald-800 text-xs font-bold">⛪ Igrejas & Congressos</span>
+          <span class="px-3.5 py-1.5 rounded-xl bg-brand-peach text-amber-900 text-xs font-bold">🎉 Eventos & Turmas</span>
+          <span class="px-3.5 py-1.5 rounded-xl bg-brand-lavender text-purple-900 text-xs font-bold">⚡ Dry Fit & Esportes</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CARDS RÁPIDOS (COMO FUNCIONA) -->
+    <section class="py-4 px-4 max-w-3xl mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+        <div class="bg-white p-4 rounded-2xl border border-slate-100 flex items-center gap-3">
+          <span class="w-9 h-9 rounded-xl bg-brand-ice text-brand-electric font-black flex items-center justify-center text-sm flex-shrink-0">1</span>
+          <div>
+            <h2 class="font-extrabold text-xs text-brand-navy">Monte os Itens</h2>
+            <p class="text-[11px] text-slate-400 font-medium">Tecido, modelo e tamanhos.</p>
+          </div>
+        </div>
+        <div class="bg-white p-4 rounded-2xl border border-slate-100 flex items-center gap-3">
+          <span class="w-9 h-9 rounded-xl bg-brand-ice text-brand-electric font-black flex items-center justify-center text-sm flex-shrink-0">2</span>
+          <div>
+            <h2 class="font-extrabold text-xs text-brand-navy">Envie no WhatsApp</h2>
+            <p class="text-[11px] text-slate-400 font-medium">Resumo pronto e organizado.</p>
+          </div>
+        </div>
+        <div class="bg-white p-4 rounded-2xl border border-slate-100 flex items-center gap-3">
+          <span class="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-600 font-black flex items-center justify-center text-sm flex-shrink-0">3</span>
+          <div>
+            <h2 class="font-extrabold text-xs text-brand-navy">Receba os Valores</h2>
+            <p class="text-[11px] text-slate-400 font-medium">Orçamento rápido pela equipe.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONFIGURADOR INTERATIVO MULTI-ITEM -->
+    <section id="configurador" class="py-8 px-4 max-w-xl mx-auto">
+      
+      <!-- Progresso -->
+      <div class="bg-white rounded-3xl p-4 mb-4 border border-slate-100 shadow-sm">
+        <div class="flex justify-between items-center text-xs font-black text-brand-navy mb-2">
+          <span id="txt-step-name">1. Finalidade</span>
+          <span id="txt-step-count" class="bg-brand-ice text-brand-electric px-3 py-1 rounded-full text-[11px] font-extrabold">Etapa 1 de 10</span>
+        </div>
+        <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+          <div id="bar-fill" class="bg-brand-electric h-full rounded-full transition-all w-[10%]"></div>
+        </div>
+        <div class="mt-2.5 flex justify-between items-center text-[11px] font-bold text-slate-400">
+          <span id="txt-item-badge" class="text-brand-navy">Configurando: Camisa 1</span>
+          <span id="txt-total-counter" class="text-brand-electric font-black">0 peças no total</span>
+        </div>
+      </div>
+
+      <!-- Card do Formulário -->
+      <div class="bg-white rounded-3xl border border-slate-100 shadow-xl p-5 sm:p-7">
+        <form onsubmit="event.preventDefault();" id="quote-form">
+
+          <!-- ETAPA 1: FINALIDADE -->
+          <div id="step-1" class="step-pane space-y-4">
+            <div>
+              <h2 class="text-lg font-black text-brand-navy">Qual é o objetivo do pedido?</h2>
+              <p class="text-xs text-slate-400 font-medium">Identifique seu projeto ou evento.</p>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-600 mb-1.5" for="inp-pname">Identificação do Pedido *</label>
+              <input type="text" id="inp-pname" placeholder="Ex: Uniforme Empresa, Retiro 2026..." 
+                class="w-full px-4 py-3.5 rounded-2xl border border-slate-200 text-sm font-bold outline-none focus:border-brand-electric focus:ring-2 focus:ring-blue-50" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-600 mb-1.5">Finalidade Principal *</label>
+              <div class="grid grid-cols-2 gap-2" id="grid-purposes"></div>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-600 mb-1.5" for="inp-pdesc">Descrição ou ideia (opcional)</label>
+              <textarea id="inp-pdesc" rows="2" placeholder="Conte brevemente sobre as peças..." 
+                class="w-full px-4 py-3 rounded-2xl border border-slate-200 text-xs font-medium outline-none focus:border-brand-electric"></textarea>
+            </div>
+          </div>
+
+          <!-- ETAPA 2: MODELO -->
+          <div id="step-2" class="step-pane hidden space-y-4">
+            <div>
+              <h2 class="text-lg font-black text-brand-navy">Escolha o modelo da peça</h2>
+              <p class="text-xs text-slate-400 font-medium">Selecione o corte ideal para este item.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5" id="grid-models"></div>
+
+            <div id="box-tapabumbum" class="hidden p-3.5 rounded-2xl bg-brand-ice border border-blue-200 space-y-2">
+              <span class="block text-xs font-bold text-brand-navy">Acabamento Baby Look:</span>
+              <div class="grid grid-cols-2 gap-2">
+                <button type="button" onclick="setTapaBumbum(false)" id="tb-sem" class="p-2.5 rounded-xl border text-xs font-bold bg-white">Sem tapa-bumbum</button>
+                <button type="button" onclick="setTapaBumbum(true)" id="tb-com" class="p-2.5 rounded-xl border text-xs font-bold bg-white">Com tapa-bumbum</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ETAPA 3: TECIDO -->
+          <div id="step-3" class="step-pane hidden space-y-4">
+            <div>
+              <h2 class="text-lg font-black text-brand-navy">Qual o tecido desejado?</h2>
+              <p class="text-xs text-slate-400 font-medium">Se não souber, pode pedir orientação.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5" id="grid-fabrics"></div>
+          </div>
+
+          <!-- ETAPA 4: QUANTIDADES E TAMANHOS -->
+          <div id="step-4" class="step-pane hidden space-y-4">
+            <div>
+              <h2 class="text-lg font-black text-brand-navy">Quantidades por tamanho</h2>
+              <p class="text-xs text-slate-400 font-medium">Use os botões + e - ou digite os números.</p>
+            </div>
+
+            <div class="p-3.5 bg-brand-ice/50 rounded-2xl border border-blue-100">
+              <div class="flex justify-between items-center text-xs font-black text-brand-navy mb-2.5">
+                <span>Infantil</span>
+                <span id="child-sum" class="text-brand-electric">0 peças</span>
+              </div>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2" id="grid-child-sizes"></div>
+            </div>
+
+            <div class="p-3.5 bg-brand-ice/50 rounded-2xl border border-blue-100">
+              <div class="flex justify-between items-center text-xs font-black text-brand-navy mb-2.5">
+                <span>Adulto</span>
+                <span id="adult-sum" class="text-brand-electric">0 peças</span>
+              </div>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2" id="grid-adult-sizes"></div>
+            </div>
+
+            <div class="p-3 bg-blue-50 border border-blue-200 rounded-2xl flex justify-between items-center font-bold text-xs text-brand-navy">
+              <span>Total deste modelo:</span>
+              <span id="item-sum" class="text-brand-electric text-base font-black">0 peças</span>
+            </div>
+          </div>
+
+          <!-- ETAPA 5: GOLA E CARACTERÍSTICAS -->
+          <div id="step-5" class="step-pane hidden space-y-4">
+            <div>
+              <h2 class="text-lg font-black text-brand-navy">Gola e características</h2>
+              <p class="text-xs text-slate-400 font-medium">Defina acabamento, manga e cor.</p>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-600 mb-1.5">Tipo de Gola *</label>
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-2" id="grid-collars"></div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+              <div>
+                <label class="block text-xs font-bold text-slate-600 mb-1.5">Comprimento da Manga *</label>
+                <div class="grid grid-cols-2 gap-2">
+                  <button type="button" onclick="setSleeve('Manga curta')" id="slv-curta" class="p-3 rounded-2xl border text-xs font-bold bg-white">Manga curta</button>
+                  <button type="button" onclick="setSleeve('Manga longa')" id="slv-longa" class="p-3 rounded-2xl border text-xs font-bold bg-white">Manga longa</button>
+                </div>
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-600 mb-1.5" for="inp-color">Cor da Camisa *</label>
+                <input type="text" id="inp-color" placeholder="Ex: Preto, Azul Marinho, Branco..." 
+                  class="w-full px-4 py-3 rounded-2xl border border-slate-200 text-sm font-bold outline-none focus:border-brand-electric" />
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-600 mb-1.5" for="inp-obs">Observações do corte (opcional)</label>
+              <input type="text" id="inp-obs" placeholder="Algum detalhe de costura ou modelo..." 
+                class="w-full px-4 py-3 rounded-2xl border border-slate-200 text-xs font-medium outline-none focus:border-brand-electric" />
+            </div>
+          </div>
+
+          <!-- ETAPA 6: TÉCNICA DE ESTAMPA -->
+          <div id="step-6" class="step-pane hidden space-y-4">
+            <div>
+              <h2 class="text-lg font-black text-brand-navy">Técnica e estampa</h2>
+              <p class="text-xs text-slate-400 font-medium">Como quer personalizar essa peça?</p>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-600 mb-1.5">Técnica de preferência *</label>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2" id="grid-techniques"></div>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-600 mb-1.5">Locais da personalização:</label>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2" id="grid-locations"></div>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-600 mb-1.5" for="inp-print-desc">Detalhes da arte / cores aproximadas</label>
+              <input type="text" id="inp-print-desc" placeholder="Ex: Logo na frente e frase nas costas..." 
+                class="w-full px-4 py-3 rounded-2xl border border-slate-200 text-xs font-medium outline-none focus:border-brand-electric" />
+            </div>
+          </div>
+
+          <!-- ETAPA 7: ARTE -->
+          <div id="step-7" class="step-pane hidden space-y-4">
+            <div>
+              <h2 class="text-lg font-black text-brand-navy">Situação da sua arte</h2>
+              <p class="text-xs text-slate-400 font-medium">Você já tem o arquivo pronto?</p>
+            </div>
+            <div class="space-y-2" id="grid-art"></div>
+            <div class="p-3.5 rounded-2xl bg-brand-ice border border-blue-200 text-xs space-y-1.5">
+              <span class="font-extrabold text-brand-navy block">📎 Envio de fotos e referências:</span>
+              <p class="text-slate-500 text-[11px] leading-relaxed">
+                As fotos, vetores e arquivos de arte devem ser <strong>enviados diretamente na conversa do WhatsApp</strong> que será aberta ao final.
+              </p>
+              <input type="file" id="inp-file" accept="image/*,.pdf" onchange="handleFileSelect(event)" class="text-xs w-full text-slate-500 pt-1" />
+              <div id="txt-file-ref" class="text-[11px] text-emerald-700 font-bold hidden"></div>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-600 mb-1.5" for="inp-art-notes">Observações sobre a arte (opcional)</label>
+              <textarea id="inp-art-notes" rows="2" placeholder="Fontes, detalhes ou referências..." 
+                class="w-full px-4 py-3 rounded-2xl border border-slate-200 text-xs font-medium outline-none focus:border-brand-electric"></textarea>
+            </div>
+          </div>
+
+          <!-- ETAPA 8: MULTI-ITEM -->
+          <div id="step-8" class="step-pane hidden space-y-4">
+            <div>
+              <h2 class="text-lg font-black text-brand-navy">Itens do seu pedido</h2>
+              <p class="text-xs text-slate-400 font-medium">Você pode incluir modelos diferentes no mesmo orçamento.</p>
+            </div>
+            <div id="configured-items-list" class="space-y-2.5"></div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
+              <button type="button" onclick="addNewItem()" class="p-3.5 rounded-2xl border-2 border-dashed border-brand-electric text-brand-electric font-extrabold text-xs hover:bg-brand-ice active:scale-95 transition-all">
+                + Adicionar Outro Modelo
+              </button>
+              <button type="button" onclick="goToStep(9)" class="p-3.5 rounded-2xl bg-brand-electric text-white font-extrabold text-xs hover:bg-blue-600 active:scale-95 transition-all">
+                Continuar para Dados →
+              </button>
+            </div>
+          </div>
+
+          <!-- ETAPA 9: SEUS DADOS -->
+          <div id="step-9" class="step-pane hidden space-y-4">
+            <div>
+              <h2 class="text-lg font-black text-brand-navy">Seus dados de contato</h2>
+              <p class="text-xs text-slate-400 font-medium">Para formalizarmos o orçamento no WhatsApp.</p>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-600 mb-1.5" for="inp-cname">Seu Nome Completo *</label>
+              <input type="text" id="inp-cname" placeholder="Ex: Amanda Silva" 
+                class="w-full px-4 py-3.5 rounded-2xl border border-slate-200 text-sm font-bold outline-none focus:border-brand-electric" />
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <div>
+                <label class="block text-xs font-bold text-slate-600 mb-1.5" for="inp-cphone">Seu WhatsApp com DDD *</label>
+                <input type="tel" id="inp-cphone" placeholder="Ex: (22) 99845-1339" 
+                  class="w-full px-4 py-3.5 rounded-2xl border border-slate-200 text-sm font-bold outline-none focus:border-brand-electric" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-600 mb-1.5" for="inp-ccity">Sua Cidade / Bairro *</label>
+                <input type="text" id="inp-ccity" placeholder="Ex: Nova Friburgo / Olaria" 
+                  class="w-full px-4 py-3.5 rounded-2xl border border-slate-200 text-sm font-bold outline-none focus:border-brand-electric" />
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-600 mb-1.5" for="inp-cdate">Data desejada para receber (opcional)</label>
+              <input type="date" id="inp-cdate" 
+                class="w-full px-4 py-3 rounded-2xl border border-slate-200 text-xs font-bold outline-none focus:border-brand-electric" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-600 mb-1.5" for="inp-cnotes">Observações gerais (opcional)</label>
+              <textarea id="inp-cnotes" rows="2" placeholder="Observações de prazo ou entrega..." 
+                class="w-full px-4 py-3 rounded-2xl border border-slate-200 text-xs font-medium outline-none focus:border-brand-electric"></textarea>
+            </div>
+          </div>
+
+          <!-- ETAPA 10: REVISÃO E WHATSAPP -->
+          <div id="step-10" class="step-pane hidden space-y-4">
+            <div>
+              <h2 class="text-lg font-black text-brand-navy">Revisão do Pedido</h2>
+              <p class="text-xs text-slate-400 font-medium">Confira tudo antes de enviar.</p>
+            </div>
+
+            <div class="p-4 bg-brand-ice/40 rounded-2xl border border-blue-100 text-xs space-y-3">
+              <div class="border-b border-blue-100 pb-2">
+                <span class="font-black text-brand-navy block mb-1">👤 Solicitante</span>
+                <p id="rev-client" class="text-slate-600 font-medium"></p>
+              </div>
+              <div>
+                <span class="font-black text-brand-navy block mb-1.5">📦 Modelos Selecionados</span>
+                <div id="rev-items" class="space-y-2"></div>
+              </div>
+            </div>
+
+            <!-- Aviso obrigatório conforme especificação -->
+            <div class="p-3.5 bg-amber-50 border border-amber-200 rounded-2xl text-amber-950 text-xs font-medium leading-relaxed">
+              <strong>Importante:</strong> Este pedido é uma solicitação de orçamento. Valores, disponibilidade, detalhes técnicos e prazo de produção serão confirmados pela Manancial Styllo.
+            </div>
+
+            <button type="button" onclick="sendToWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-black p-4 rounded-2xl shadow-lg shadow-emerald-700/20 transition-all text-sm flex items-center justify-center gap-2">
+              <span>💬 Enviar Pedido pelo WhatsApp</span>
+            </button>
+
+            <button type="button" onclick="goToStep(8)" class="w-full text-center text-xs font-extrabold text-slate-400 hover:text-brand-navy py-1">
+              ← Deseja adicionar ou alterar algum modelo?
+            </button>
+          </div>
+
+          <!-- BOTÕES DE NAVEGAÇÃO -->
+          <div class="pt-5 border-t border-slate-100 mt-5 flex justify-between gap-2" id="nav-actions">
+            <button type="button" id="btn-back" onclick="prevStep()" class="px-5 py-3 rounded-2xl border border-slate-200 text-xs font-extrabold text-slate-600 hover:bg-slate-50 transition-all">
+              Voltar
+            </button>
+            <button type="button" id="btn-next" onclick="nextStep()" class="px-7 py-3 rounded-2xl bg-brand-navy hover:bg-slate-900 active:scale-95 text-white text-xs font-black transition-all ml-auto">
+              Avançar
+            </button>
+          </div>
+
+        </form>
+      </div>
+
+    </section>
+
+    <!-- PRODUTOS FUTUROS (PREPARAÇÃO) -->
+    <section class="py-8 bg-brand-ice/30 border-t border-blue-100 text-center px-4">
+      <span class="text-[11px] font-black text-brand-navy uppercase tracking-widest block">Linha Automotiva & Brindes</span>
+      <p class="text-xs text-slate-500 font-medium mt-1 max-w-sm mx-auto">
+        Também produzimos <strong>lixeirinhas de marcha personalizadas</strong> para automóveis e outros itens sob consulta.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="bg-brand-navy text-white py-6 px-4 text-xs">
+    <div class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-3">
+      <div class="flex items-center gap-2">
+        <span class="font-black text-sm">MANANCIAL STYLLO</span>
+        <span class="text-blue-200 text-xs">• Nova Friburgo/RJ</span>
+      </div>
+      <div class="text-blue-200 font-bold">
+        WhatsApp: (22) 99845-1339
+      </div>
+    </div>
+    <div class="text-center text-slate-400 text-[11px] mt-3">
+      © <span id="year"></span> Manancial Styllo — Camisas Personalizadas. Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <!-- SCRIPT COMPLETO OTIMIZADO -->
+  <script>
+    // CONFIGURAÇÃO CENTRALIZADA COM NÚMERO OFICIAL
+    const CONFIG = {
+      phone: "5522998451339", // Oficial Manancial Styllo (Nova Friburgo - RJ)
+      purposes: ["Empresa / Uniforme", "Igreja / Congresso", "Evento / Campanha", "Turma / Excursão", "Equipe / Time", "Outro"],
+      models: ["Camisa Tradicional", "Baby Look", "Outro Modelo", "Preciso de Orientação"],
+      fabrics: ["Algodão", "PV (Poliviscose)", "PP (100% Poliéster)", "Dry Fit", "Romantic", "Microfibra", "Outro", "Preciso de Orientação"],
+      collars: ["Gola redonda", "Gola V", "Gola reta", "Gola aberta", "Outra", "Preciso de Orientação"],
+      techniques: ["Silk (1 cor)", "Silk (2 cores)", "Silk (3+ cores)", "DTF", "Sublimação", "Bordado", "Outra", "Preciso de Orientação"],
+      locations: ["Frente", "Costas", "Manga", "Outro local"],
+      artOptions: ["Sim, tenho a arte pronta", "Não, preciso que a empresa crie", "Tenho ideia e preciso de orientação"],
+      cSizes: ["PP infantil", "P infantil", "M infantil", "G infantil"],
+      aSizes: ["PP", "P", "M", "G", "GG", "XG", "G1", "XGG"]
+    };
+
+    const state = {
+      step: 1,
+      currIdx: 0,
+      customer: { name: "", phone: "", city: "", date: "", notes: "", projName: "", purpose: "", projDesc: "" },
+      items: []
+    };
+
+    function createItem(num) {
+      const sz = {};
+      [...CONFIG.cSizes, ...CONFIG.aSizes].forEach(s => sz[s] = 0);
+      return {
+        title: `Camisa ${num}`,
+        model: "",
+        isBabyLook: false,
+        hasTapaBumbum: false,
+        fabric: "",
+        collar: "",
+        sleeve: "Manga curta",
+        color: "",
+        obs: "",
+        technique: "",
+        locations: [],
+        printDesc: "",
+        artStatus: "",
+        artNotes: "",
+        fileRef: null,
+        sizes: sz
+      };
+    }
+
+    state.items.push(createItem(1));
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById('year').textContent = new Date().getFullYear();
+      initUI();
+    });
+
+    function scrollToConfig() {
+      document.getElementById('configurador').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function initUI() {
+      // Finalidades
+      document.getElementById('grid-purposes').innerHTML = CONFIG.purposes.map(p => `
+        <button type="button" onclick="selectPurpose('${p}')" class="btn-choice purpose-btn p-3 rounded-2xl border border-slate-200 text-xs font-bold bg-white text-left">${p}</button>
+      `).join('');
+
+      // Modelos
+      document.getElementById('grid-models').innerHTML = CONFIG.models.map(m => `
+        <button type="button" onclick="selectModel('${m}')" class="btn-choice model-btn p-3.5 rounded-2xl border border-slate-200 text-xs font-bold bg-white text-left">${m}</button>
+      `).join('');
+
+      // Tecidos
+      document.getElementById('grid-fabrics').innerHTML = CONFIG.fabrics.map(f => `
+        <button type="button" onclick="selectFabric('${f}')" class="btn-choice fabric-btn p-3.5 rounded-2xl border border-slate-200 text-xs font-bold bg-white text-left">${f}</button>
+      `).join('');
+
+      // Tamanhos
+      const rSize = (s) => `
+        <div class="bg-white p-2 rounded-2xl border border-slate-200 flex flex-col items-center">
+          <span class="text-[11px] font-extrabold text-brand-navy mb-1">${s}</span>
+          <div class="flex items-center w-full justify-between gap-1">
+            <button type="button" onclick="adjustSize('${s}', -1)" class="w-6 h-6 rounded-lg bg-slate-100 text-slate-700 font-black text-xs active:scale-90">-</button>
+            <input type="number" min="0" value="0" id="sz-${clean(s)}" onchange="setSizeDirect('${s}', this.value)" class="w-8 text-center text-xs font-black text-brand-navy border border-slate-100 rounded" />
+            <button type="button" onclick="adjustSize('${s}', 1)" class="w-6 h-6 rounded-lg bg-blue-100 text-brand-electric font-black text-xs active:scale-90">+</button>
+          </div>
+        </div>
+      `;
+      document.getElementById('grid-child-sizes').innerHTML = CONFIG.cSizes.map(rSize).join('');
+      document.getElementById('grid-adult-sizes').innerHTML = CONFIG.aSizes.map(rSize).join('');
+
+      // Golas
+      document.getElementById('grid-collars').innerHTML = CONFIG.collars.map(c => `
+        <button type="button" onclick="selectCollar('${c}')" class="btn-choice collar-btn p-3 rounded-2xl border border-slate-200 text-xs font-bold bg-white">${c}</button>
+      `).join('');
+
+      // Técnicas
+      document.getElementById('grid-techniques').innerHTML = CONFIG.techniques.map(t => `
+        <button type="button" onclick="selectTechnique('${t}')" class="btn-choice tech-btn p-3 rounded-2xl border border-slate-200 text-xs font-bold bg-white text-left">${t}</button>
+      `).join('');
+
+      // Locais
+      document.getElementById('grid-locations').innerHTML = CONFIG.locations.map(l => `
+        <button type="button" onclick="toggleLocation('${l}')" id="loc-${clean(l)}" class="p-2.5 rounded-2xl border border-slate-200 text-xs font-bold bg-white">${l}</button>
+      `).join('');
+
+      // Arte
+      document.getElementById('grid-art').innerHTML = CONFIG.artOptions.map(a => `
+        <button type="button" onclick="selectArt('${a}')" class="btn-choice art-btn w-full p-3.5 rounded-2xl border border-slate-200 text-xs font-bold bg-white text-left">${a}</button>
+      `).join('');
+    }
+
+    function clean(str) { return str.replace(/[^a-zA-Z0-9]/g, '_'); }
+
+    function selectPurpose(p) {
+      state.customer.purpose = p;
+      markActive('.purpose-btn', p);
+    }
+
+    function selectModel(m) {
+      const it = state.items[state.currIdx];
+      it.model = m;
+      it.isBabyLook = m.toLowerCase().includes('baby look');
+      document.getElementById('box-tapabumbum').classList.toggle('hidden', !it.isBabyLook);
+      markActive('.model-btn', m);
+    }
+
+    function setTapaBumbum(val) {
+      state.items[state.currIdx].hasTapaBumbum = val;
+      document.getElementById('tb-sem').className = `p-2.5 rounded-xl border text-xs font-bold ${!val ? 'bg-brand-electric text-white' : 'bg-white'}`;
+      document.getElementById('tb-com').className = `p-2.5 rounded-xl border text-xs font-bold ${val ? 'bg-brand-electric text-white' : 'bg-white'}`;
+    }
+
+    function selectFabric(f) {
+      state.items[state.currIdx].fabric = f;
+      markActive('.fabric-btn', f);
+    }
+
+    function adjustSize(s, delta) {
+      const it = state.items[state.currIdx];
+      it.sizes[s] = Math.max(0, (it.sizes[s] || 0) + delta);
+      document.getElementById(`sz-${clean(s)}`).value = it.sizes[s];
+      calcTotals();
+    }
+
+    function setSizeDirect(s, val) {
+      const it = state.items[state.currIdx];
+      it.sizes[s] = Math.max(0, parseInt(val, 10) || 0);
+      document.getElementById(`sz-${clean(s)}`).value = it.sizes[s];
+      calcTotals();
+    }
+
+    function calcTotals() {
+      const it = state.items[state.currIdx];
+      let c = 0, a = 0;
+      CONFIG.cSizes.forEach(s => c += (it.sizes[s] || 0));
+      CONFIG.aSizes.forEach(s => a += (it.sizes[s] || 0));
+      const total = c + a;
+
+      document.getElementById('child-sum').textContent = `${c} peças`;
+      document.getElementById('adult-sum').textContent = `${a} peças`;
+      document.getElementById('item-sum').textContent = `${total} peças`;
+
+      let grand = 0;
+      state.items.forEach(item => Object.values(item.sizes).forEach(q => grand += q));
+      document.getElementById('txt-total-counter').textContent = `${grand} peças no total`;
+    }
+
+    function selectCollar(c) {
+      state.items[state.currIdx].collar = c;
+      markActive('.collar-btn', c);
+    }
+
+    function setSleeve(type) {
+      state.items[state.currIdx].sleeve = type;
+      document.getElementById('slv-curta').className = `p-3 rounded-2xl border text-xs font-bold ${type === 'Manga curta' ? 'bg-brand-electric text-white' : 'bg-white'}`;
+      document.getElementById('slv-longa').className = `p-3 rounded-2xl border text-xs font-bold ${type === 'Manga longa' ? 'bg-brand-electric text-white' : 'bg-white'}`;
+    }
+
+    function selectTechnique(t) {
+      state.items[state.currIdx].technique = t;
+      markActive('.tech-btn', t);
+    }
+
+    function toggleLocation(l) {
+      const it = state.items[state.currIdx];
+      const idx = it.locations.indexOf(l);
+      if (idx > -1) it.locations.splice(idx, 1);
+      else it.locations.push(l);
+      document.getElementById(`loc-${clean(l)}`).classList.toggle('active', it.locations.includes(l));
+    }
+
+    function selectArt(a) {
+      state.items[state.currIdx].artStatus = a;
+      markActive('.art-btn', a);
+    }
+
+    function handleFileSelect(e) {
+      const f = e.target.files[0];
+      const msg = document.getElementById('txt-file-ref');
+      if (f) {
+        state.items[state.currIdx].fileRef = f.name;
+        msg.textContent = `Arquivo "${f.name}" selecionado. Lembre-se de anexá-lo na conversa do WhatsApp.`;
+        msg.classList.remove('hidden');
+      } else {
+        state.items[state.currIdx].fileRef = null;
+        msg.classList.add('hidden');
+      }
+    }
+
+    function markActive(selector, text) {
+      document.querySelectorAll(selector).forEach(b => {
+        b.classList.toggle('active', b.textContent.trim().startsWith(text));
+      });
+    }
+
+    // NAVEGAÇÃO E ETAPAS
+    function goToStep(s) {
+      if (s > state.step && !validate(state.step)) return;
+      saveInputs();
+
+      state.step = s;
+      document.querySelectorAll('.step-pane').forEach(el => el.classList.add('hidden'));
+      document.getElementById(`step-${s}`).classList.remove('hidden');
+
+      const titles = [
+        "1. Finalidade", "2. Modelo", "3. Tecido", "4. Tamanhos", "5. Gola e Peça",
+        "6. Estampa", "7. Arte", "8. Itens do Pedido", "9. Seus Dados", "10. Revisão"
+      ];
+      document.getElementById('txt-step-name').textContent = titles[s - 1];
+      document.getElementById('txt-step-count').textContent = `Etapa ${s} de 10`;
+      document.getElementById('bar-fill').style.width = `${s * 10}%`;
+      document.getElementById('txt-item-badge').textContent = `Configurando: ${state.items[state.currIdx].title}`;
+
+      document.getElementById('btn-back').style.visibility = s === 1 ? 'hidden' : 'visible';
+      document.getElementById('btn-next').style.display = (s === 8 || s === 10) ? 'none' : 'block';
+
+      if (s === 8) renderStep8();
+      if (s === 10) renderStep10();
+    }
+
+    function nextStep() { if (state.step < 10) goToStep(state.step + 1); }
+    function prevStep() { if (state.step > 1) goToStep(state.step - 1); }
+
+    function saveInputs() {
+      state.customer.projName = document.getElementById('inp-pname').value.trim();
+      state.customer.projDesc = document.getElementById('inp-pdesc').value.trim();
+
+      const it = state.items[state.currIdx];
+      it.color = document.getElementById('inp-color').value.trim();
+      it.obs = document.getElementById('inp-obs').value.trim();
+      it.printDesc = document.getElementById('inp-print-desc').value.trim();
+      it.artNotes = document.getElementById('inp-art-notes').value.trim();
+
+      state.customer.name = document.getElementById('inp-cname').value.trim();
+      state.customer.phone = document.getElementById('inp-cphone').value.trim();
+      state.customer.city = document.getElementById('inp-ccity').value.trim();
+      state.customer.date = document.getElementById('inp-cdate').value;
+      state.customer.notes = document.getElementById('inp-cnotes').value.trim();
+    }
+
+    function validate(s) {
+      const it = state.items[state.currIdx];
+      if (s === 1) {
+        if (!document.getElementById('inp-pname').value.trim()) { alert("Por favor, dê um nome para o seu pedido."); return false; }
+        if (!state.customer.purpose) { alert("Selecione a finalidade principal."); return false; }
+      }
+      if (s === 2 && !it.model) { alert("Escolha o corte/modelo da camisa."); return false; }
+      if (s === 3 && !it.fabric) { alert("Escolha o tecido desejado."); return false; }
+      if (s === 4) {
+        let tot = 0;
+        Object.values(it.sizes).forEach(q => tot += q);
+        if (tot === 0) { alert("Adicione pelo menos 1 peça na grade de tamanhos."); return false; }
+      }
+      if (s === 5) {
+        if (!it.collar) { alert("Selecione o tipo de gola."); return false; }
+        if (!document.getElementById('inp-color').value.trim()) { alert("Informe a cor desejada."); return false; }
+      }
+      if (s === 6 && !it.technique) { alert("Escolha a técnica de personalização."); return false; }
+      if (s === 7 && !it.artStatus) { alert("Informe a situação da sua arte."); return false; }
+      if (s === 9) {
+        if (!document.getElementById('inp-cname').value.trim() || !document.getElementById('inp-cphone').value.trim() || !document.getElementById('inp-ccity').value.trim()) {
+          alert("Preencha Nome, WhatsApp e Cidade obrigatoriamente.");
+          return false;
+        }
+      }
+      return true;
+    }
+
+    // GESTÃO MULTI-ITEM
+    function addNewItem() {
+      state.items.push(createItem(state.items.length + 1));
+      state.currIdx = state.items.length - 1;
+      loadItemForm(state.currIdx);
+      goToStep(2);
+    }
+
+    function renderStep8() {
+      document.getElementById('configured-items-list').innerHTML = state.items.map((it, idx) => {
+        let tot = 0;
+        const sz = [];
+        Object.entries(it.sizes).forEach(([k, v]) => { if (v > 0) { tot += v; sz.push(`${k}: ${v}`); } });
+        return `
+          <div class="p-3.5 bg-brand-ice/40 border border-blue-200 rounded-2xl flex justify-between items-center text-xs">
+            <div>
+              <span class="font-black text-brand-navy">${it.title}: ${it.model} ${it.hasTapaBumbum ? '(c/ tapa-bumbum)' : ''}</span>
+              <p class="text-slate-500 font-medium">${it.fabric} • Gola ${it.collar} • ${it.color} • <strong>${tot} peças</strong></p>
+              <p class="text-[10px] text-slate-400 font-bold mt-0.5">${sz.join(', ')}</p>
+            </div>
+            <div class="flex gap-1.5">
+              <button type="button" onclick="editItem(${idx})" class="px-2.5 py-1.5 border border-slate-200 rounded-xl bg-white font-extrabold text-slate-700">Editar</button>
+              ${state.items.length > 1 ? `<button type="button" onclick="removeItem(${idx})" class="px-2.5 py-1.5 border border-rose-200 rounded-xl bg-white text-rose-600 font-extrabold">Excluir</button>` : ''}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function editItem(idx) {
+      state.currIdx = idx;
+      loadItemForm(idx);
+      goToStep(2);
+    }
+
+    function removeItem(idx) {
+      if (confirm(`Remover ${state.items[idx].title}?`)) {
+        state.items.splice(idx, 1);
+        state.currIdx = Math.max(0, state.items.length - 1);
+        renderStep8();
+        calcTotals();
+      }
+    }
+
+    function loadItemForm(idx) {
+      const it = state.items[idx];
+      markActive('.model-btn', it.model);
+      document.getElementById('box-tapabumbum').classList.toggle('hidden', !it.isBabyLook);
+      setTapaBumbum(it.hasTapaBumbum);
+      markActive('.fabric-btn', it.fabric);
+      markActive('.collar-btn', it.collar);
+      setSleeve(it.sleeve);
+      document.getElementById('inp-color').value = it.color || '';
+      document.getElementById('inp-obs').value = it.obs || '';
+      markActive('.tech-btn', it.technique);
+      CONFIG.locations.forEach(l => {
+        document.getElementById(`loc-${clean(l)}`).classList.toggle('active', it.locations.includes(l));
+      });
+      document.getElementById('inp-print-desc').value = it.printDesc || '';
+      markActive('.art-btn', it.artStatus);
+      document.getElementById('inp-art-notes').value = it.artNotes || '';
+
+      [...CONFIG.cSizes, ...CONFIG.aSizes].forEach(s => {
+        document.getElementById(`sz-${clean(s)}`).value = it.sizes[s] || 0;
+      });
+      calcTotals();
+    }
+
+    // REVISÃO FINAL
+    function renderStep10() {
+      saveInputs();
+      document.getElementById('rev-client').innerHTML = `
+        <strong>${state.customer.name}</strong> • ${state.customer.phone}<br/>
+        ${state.customer.city} • Pedido: <strong>${state.customer.projName}</strong> (${state.customer.purpose})
+        ${state.customer.date ? `<br/>Entrega desejada: ${state.customer.date.split('-').reverse().join('/')}` : ''}
+      `;
+
+      let grand = 0;
+      document.getElementById('rev-items').innerHTML = state.items.map((it, i) => {
+        let tot = 0;
+        const sz = [];
+        Object.entries(it.sizes).forEach(([k, v]) => { if (v > 0) { tot += v; grand += v; sz.push(`${k}: ${v}`); } });
+        return `
+          <div class="p-3 bg-white border border-blue-100 rounded-xl">
+            <div class="flex justify-between font-black text-brand-navy">
+              <span>${it.title}: ${it.model} ${it.hasTapaBumbum ? '(c/ tapa-bumbum)' : ''}</span>
+              <span class="text-brand-electric font-black">${tot} peças</span>
+            </div>
+            <p class="text-slate-500 font-medium text-[11px]">${it.fabric} • ${it.collar} • ${it.sleeve} • Cor: ${it.color}</p>
+            <p class="text-slate-500 font-medium text-[11px]">Estampa: ${it.technique} ${it.locations.length ? `(${it.locations.join(', ')})` : ''}</p>
+            <p class="text-slate-700 font-bold text-[10px] mt-1">Tamanhos: ${sz.join(' | ')}</p>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // ENVIO PARA O WHATSAPP COM NÚMERO OFICIAL
+    function sendToWhatsApp() {
+      saveInputs();
+
+      let grand = 0;
+      state.items.forEach(it => Object.values(it.sizes).forEach(q => grand += q));
+      if (grand === 0) { alert("O pedido precisa conter pelo menos 1 peça."); return; }
+
+      let msg = `*SOLICITAÇÃO DE ORÇAMENTO — MANANCIAL STYLLO*\n`;
+      msg += `Nova Friburgo - RJ\n`;
+      msg += `-------------------------------------------\n`;
+      msg += `*DADOS DO CLIENTE*\n`;
+      msg += `• *Nome:* ${state.customer.name}\n`;
+      msg += `• *WhatsApp:* ${state.customer.phone}\n`;
+      msg += `• *Cidade/Bairro:* ${state.customer.city}\n`;
+      msg += `• *Projeto:* ${state.customer.projName} (${state.customer.purpose})\n`;
+      if (state.customer.date) msg += `• *Data desejada:* ${state.customer.date.split('-').reverse().join('/')}\n`;
+      if (state.customer.projDesc) msg += `• *Descrição:* ${state.customer.projDesc}\n`;
+
+      msg += `\n*ITENS DO PEDIDO (${state.items.length} modelo(s))*\n`;
+      msg += `-------------------------------------------\n`;
+
+      state.items.forEach((it, i) => {
+        let tot = 0;
+        const sz = [];
+        Object.entries(it.sizes).forEach(([k, v]) => { if (v > 0) { tot += v; sz.push(`${k}: ${v}`); } });
+
+        msg += `\n*${i + 1}. ${it.title.toUpperCase()}*\n`;
+        msg += `• *Modelo:* ${it.model}${it.hasTapaBumbum ? ' (Com tapa-bumbum)' : ''}\n`;
+        msg += `• *Tecido:* ${it.fabric}\n`;
+        msg += `• *Gola:* ${it.collar} | *Manga:* ${it.sleeve}\n`;
+        msg += `• *Cor:* ${it.color}\n`;
+        msg += `• *Estampa:* ${it.technique}\n`;
+        if (it.locations.length) msg += `• *Locais:* ${it.locations.join(', ')}\n`;
+        if (it.printDesc) msg += `• *Detalhes da arte:* ${it.printDesc}\n`;
+        msg += `• *Situação da arte:* ${it.artStatus}\n`;
+        if (it.fileRef) msg += `• *Arquivo referência:* "${it.fileRef}" (vou enviar anexo nesta conversa)\n`;
+        msg += `• *Tamanhos:* ${sz.join(' | ')}\n`;
+        msg += `• *Subtotal:* ${tot} peças\n`;
+      });
+
+      msg += `\n-------------------------------------------\n`;
+      msg += `*TOTAL GERAL:* ${grand} peças\n`;
+      if (state.customer.notes) msg += `*Observações:* ${state.customer.notes}\n`;
+      msg += `\n_Mensagem gerada pelo site Manancial Styllo. Aguardo orçamento com valores e prazos._`;
+
+      window.open(`https://wa.me/${CONFIG.phone}?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+  </script>
+</body>
+</html>
