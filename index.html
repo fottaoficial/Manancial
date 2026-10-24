@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Manancial Styllo | Camisas Personalizadas • Nova Friburgo</title>
   
+  <!-- Fonte Redonda e Encorpada -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
@@ -19,6 +20,7 @@
             brand: {
               navy: '#071B46',
               electric: '#1264D8',
+              cyan: '#06B6D4',
               ice: '#EEF4FF',
               pastelMint: '#E6F8F0',
               pastelPeach: '#FFF1E5',
@@ -34,12 +36,24 @@
     html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
     input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
     input[type=number] { -moz-appearance: textfield; }
+    
+    /* Animação suave de rolagem */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     .btn-card.active {
       border-color: #1264D8 !important;
       background-color: #EEF4FF !important;
       color: #1264D8 !important;
       font-weight: 800 !important;
-      box-shadow: 0 4px 14px rgba(18, 100, 216, 0.12);
+      box-shadow: 0 4px 14px rgba(18, 100, 216, 0.15);
     }
     .check-box.active {
       border-color: #1264D8 !important;
@@ -51,24 +65,22 @@
 <body class="bg-[#F8FAFC] text-slate-800 antialiased min-h-screen flex flex-col font-sans">
 
   <!-- CABEÇALHO -->
-  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-100 py-4 px-4 shadow-sm">
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-blue-100/60 py-3.5 px-4 shadow-sm">
     <div class="max-w-4xl mx-auto flex items-center justify-between gap-3">
       
       <!-- LOGO OFICIAL MANANCIAL STYLLO RECRIADO (SVG METÁLICO) -->
-      <a href="#inicio" class="flex items-center gap-3">
-        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#061433] via-[#0b245c] to-[#040d21] p-1 shadow-md border border-slate-700/50 flex items-center justify-center relative overflow-hidden flex-shrink-0">
-          <!-- Brilho metálico sutil -->
+      <a href="#inicio" class="flex items-center gap-3 group">
+        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#061433] via-[#0b245c] to-[#040d21] p-1 shadow-md border border-blue-900/40 flex items-center justify-center relative overflow-hidden flex-shrink-0 group-hover:scale-105 transition-transform">
           <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-cyan-400/20 to-transparent"></div>
           <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow">
             <defs>
               <linearGradient id="metalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stop-color="#ffffff" />
-                <stop offset="35%" stop-color="#93c5fd" />
-                <stop offset="65%" stop-color="#2563eb" />
+                <stop offset="30%" stop-color="#93c5fd" />
+                <stop offset="70%" stop-color="#2563eb" />
                 <stop offset="100%" stop-color="#dbeafe" />
               </linearGradient>
             </defs>
-            <!-- Monograma MS com curvas de estilo e água/manancial -->
             <path d="M22 74V28L42 54L62 28V74" fill="none" stroke="url(#metalGrad)" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M48 66C54 62 68 62 74 68C78 72 74 78 66 78C56 78 54 84 64 86C74 88 80 82 82 78" fill="none" stroke="url(#metalGrad)" stroke-width="5" stroke-linecap="round"/>
           </svg>
@@ -83,8 +95,8 @@
         </div>
       </a>
 
-      <!-- Botão Rápido -->
-      <button onclick="scrollToConfig()" class="bg-brand-electric hover:bg-blue-600 active:scale-95 text-white font-extrabold text-xs sm:text-sm px-4 sm:px-5 py-2.5 rounded-2xl shadow-md shadow-blue-600/20 transition-all flex items-center gap-1.5 whitespace-nowrap">
+      <!-- Botão Superior Direto -->
+      <button onclick="scrollToConfig()" class="bg-gradient-to-r from-brand-electric to-blue-600 hover:from-blue-600 hover:to-brand-navy active:scale-95 text-white font-extrabold text-xs sm:text-sm px-4 sm:px-5 py-2.5 rounded-2xl shadow-md shadow-blue-600/25 transition-all flex items-center gap-1.5 whitespace-nowrap">
         <span>Fazer Pedido</span>
         <span>→</span>
       </button>
@@ -93,84 +105,84 @@
 
   <main class="flex-grow">
     
-    <!-- HERO COM CORES PASTÉIS E TIPOGRAFIA REDONDA -->
-    <section id="inicio" class="pt-12 pb-10 px-4 text-center">
+    <!-- HERO DIRETO COM DEGRADÊS E CORES PASTÉIS -->
+    <section id="inicio" class="pt-12 pb-10 px-4 text-center reveal-on-scroll">
       <div class="max-w-2xl mx-auto space-y-5">
         
-        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-mint border border-emerald-200 text-emerald-800 text-xs font-black">
-          <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-          Atendimento Direto em Nova Friburgo & Região
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-50 via-cyan-50 to-emerald-50 border border-blue-200 text-brand-navy text-xs font-black shadow-xs">
+          <span class="w-2.5 h-2.5 rounded-full bg-brand-electric animate-pulse"></span>
+          Produção Própria em Nova Friburgo & Envio para Todo RJ
         </div>
 
         <h1 class="text-3xl sm:text-5xl font-black text-brand-navy tracking-tight leading-tight">
           Sua ideia, <br/>
-          <span class="text-brand-electric">nossa personalização.</span>
+          <span class="bg-gradient-to-r from-brand-electric via-blue-600 to-cyan-500 bg-clip-text text-transparent">nossa personalização.</span>
         </h1>
 
         <p class="text-sm sm:text-base text-slate-500 font-medium max-w-lg mx-auto leading-relaxed">
-          Camisas sob medida para sua empresa, igreja, evento ou equipe. Monte seu pedido de um jeito simples e receba o orçamento detalhado no WhatsApp.
+          Camisas personalizadas com alto padrão para sua empresa, igreja, evento ou equipe. Monte seu pedido em poucos passos e receba o orçamento direto no WhatsApp.
         </p>
 
         <div class="pt-2">
-          <button onclick="scrollToConfig()" class="w-full sm:w-auto bg-brand-navy hover:bg-slate-900 active:scale-95 text-white font-extrabold text-base px-9 py-4 rounded-2xl shadow-xl shadow-brand-navy/15 transition-all">
+          <button onclick="scrollToConfig()" class="w-full sm:w-auto bg-gradient-to-r from-brand-navy to-blue-900 hover:from-slate-900 hover:to-brand-navy active:scale-95 text-white font-extrabold text-base px-9 py-4 rounded-2xl shadow-xl shadow-brand-navy/20 transition-all">
             Montar Meu Pedido Agora →
           </button>
         </div>
 
         <!-- Tags Pastéis Bem Coloridas -->
         <div class="pt-4 flex flex-wrap justify-center gap-2.5">
-          <span class="px-3.5 py-1.5 rounded-2xl bg-brand-ice border border-blue-100 text-brand-navy text-xs font-bold">🏢 Empresas & Uniformes</span>
-          <span class="px-3.5 py-1.5 rounded-2xl bg-brand-pastelMint border border-emerald-100 text-emerald-800 text-xs font-bold">⛪ Igrejas & Congressos</span>
-          <span class="px-3.5 py-1.5 rounded-2xl bg-brand-pastelPeach border border-orange-100 text-amber-900 text-xs font-bold">🎉 Eventos & Turmas</span>
-          <span class="px-3.5 py-1.5 rounded-2xl bg-brand-pastelPurple border border-purple-100 text-purple-900 text-xs font-bold">⚡ Dry Fit Esportivo</span>
+          <span class="px-3.5 py-1.5 rounded-2xl bg-brand-ice border border-blue-200 text-brand-navy text-xs font-black">🏢 Empresas & Uniformes</span>
+          <span class="px-3.5 py-1.5 rounded-2xl bg-brand-pastelMint border border-emerald-200 text-emerald-800 text-xs font-black">⛪ Igrejas & Congressos</span>
+          <span class="px-3.5 py-1.5 rounded-2xl bg-brand-pastelPeach border border-orange-200 text-amber-900 text-xs font-black">🎉 Eventos & Turmas</span>
+          <span class="px-3.5 py-1.5 rounded-2xl bg-brand-pastelPurple border border-purple-200 text-purple-900 text-xs font-black">⚡ Dry Fit Esportivo</span>
         </div>
 
       </div>
     </section>
 
-    <!-- CARDS DE INSPIRAÇÃO E BENEFÍCIOS -->
-    <section class="py-6 px-4 max-w-3xl mx-auto">
+    <!-- CARDS DESTAQUES COLORIDOS COM SCROLL EFFECT -->
+    <section class="py-6 px-4 max-w-3xl mx-auto reveal-on-scroll">
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
-        <div class="bg-brand-ice/80 p-5 rounded-3xl border border-blue-100 flex items-start gap-3.5">
-          <span class="w-10 h-10 rounded-2xl bg-white text-brand-electric font-black flex items-center justify-center text-sm shadow-sm flex-shrink-0">1</span>
+        <div class="bg-gradient-to-br from-white to-blue-50/70 p-5 rounded-3xl border border-blue-200/80 shadow-sm flex items-start gap-3.5">
+          <span class="w-10 h-10 rounded-2xl bg-brand-electric text-white font-black flex items-center justify-center text-sm shadow-sm flex-shrink-0">1</span>
           <div>
             <h2 class="font-black text-sm text-brand-navy">Escolha as Peças</h2>
-            <p class="text-xs text-slate-500 font-medium mt-0.5">Defina modelos, tecidos e quantidades por tamanho.</p>
+            <p class="text-xs text-slate-500 font-medium mt-0.5">Modelos, tecidos, cores e quantidade de manga curta ou longa.</p>
           </div>
         </div>
 
-        <div class="bg-brand-pastelMint/80 p-5 rounded-3xl border border-emerald-100 flex items-start gap-3.5">
-          <span class="w-10 h-10 rounded-2xl bg-white text-emerald-600 font-black flex items-center justify-center text-sm shadow-sm flex-shrink-0">2</span>
+        <div class="bg-gradient-to-br from-white to-emerald-50/70 p-5 rounded-3xl border border-emerald-200/80 shadow-sm flex items-start gap-3.5">
+          <span class="w-10 h-10 rounded-2xl bg-emerald-600 text-white font-black flex items-center justify-center text-sm shadow-sm flex-shrink-0">2</span>
           <div>
-            <h2 class="font-black text-sm text-emerald-950">Diga como quer a estampa</h2>
-            <p class="text-xs text-emerald-800/80 font-medium mt-0.5">Frente, costas, manga e cores de forma descomplicada.</p>
+            <h2 class="font-black text-sm text-emerald-950">Estampa Fácil</h2>
+            <p class="text-xs text-emerald-800/80 font-medium mt-0.5">Marque onde quer estampar (frente, costas, manga) sem termos difíceis.</p>
           </div>
         </div>
 
-        <div class="bg-brand-pastelPurple/80 p-5 rounded-3xl border border-purple-100 flex items-start gap-3.5">
-          <span class="w-10 h-10 rounded-2xl bg-white text-purple-600 font-black flex items-center justify-center text-sm shadow-sm flex-shrink-0">3</span>
+        <div class="bg-gradient-to-br from-white to-purple-50/70 p-5 rounded-3xl border border-purple-200/80 shadow-sm flex items-start gap-3.5">
+          <span class="w-10 h-10 rounded-2xl bg-purple-600 text-white font-black flex items-center justify-center text-sm shadow-sm flex-shrink-0">3</span>
           <div>
-            <h2 class="font-black text-sm text-purple-950">Receba o Orçamento</h2>
-            <p class="text-xs text-purple-800/80 font-medium mt-0.5">Nossa equipe passa valores e prazos no WhatsApp.</p>
+            <h2 class="font-black text-sm text-purple-950">Orçamento no Zap</h2>
+            <p class="text-xs text-purple-800/80 font-medium mt-0.5">Receba os valores e prazos detalhados pela equipe da Manancial.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CONFIGURADOR INTERATIVO MULTI-ITEM -->
-    <section id="configurador" class="py-10 px-4 max-w-xl mx-auto">
+    <!-- CONFIGURADOR INTERATIVO OTIMIZADO (5 ETAPAS ÁGEIS) -->
+    <section id="configurador" class="py-10 px-4 max-w-xl mx-auto reveal-on-scroll">
       
-      <!-- Progresso com Cores Vivas -->
+      <!-- Progresso de 5 Etapas -->
       <div class="bg-white rounded-3xl p-5 mb-5 border border-slate-100 shadow-sm space-y-2.5">
         <div class="flex justify-between items-center text-xs font-black text-brand-navy">
-          <span id="txt-step-name" class="text-sm">1. Finalidade</span>
-          <span id="txt-step-count" class="bg-brand-ice text-brand-electric px-3 py-1 rounded-full text-xs font-black">Etapa 1 de 10</span>
+          <span id="txt-step-name" class="text-sm font-extrabold text-brand-electric">Etapa 1: Pedido & Modelo</span>
+          <span id="txt-step-count" class="bg-brand-ice text-brand-electric px-3 py-1 rounded-full text-xs font-black">1 de 5</span>
         </div>
         <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
-          <div id="bar-fill" class="bg-brand-electric h-full rounded-full transition-all duration-300 w-[10%]"></div>
+          <div id="bar-fill" class="bg-gradient-to-r from-brand-electric to-cyan-500 h-full rounded-full transition-all duration-300 w-[20%]"></div>
         </div>
         <div class="flex justify-between items-center text-xs font-bold text-slate-400 pt-1">
-          <span id="txt-item-badge" class="text-brand-navy font-black">Camisa 1</span>
+          <span id="txt-item-badge" class="text-brand-navy font-black">Configurando: Camisa 1</span>
           <span id="txt-total-counter" class="text-brand-electric font-black bg-blue-50 px-2.5 py-0.5 rounded-lg">Total: 0 peças</span>
         </div>
       </div>
@@ -179,267 +191,287 @@
       <div class="bg-white rounded-3xl border border-slate-100 shadow-xl p-6 sm:p-8">
         <form onsubmit="event.preventDefault();" id="quote-form">
 
-          <!-- ETAPA 1: FINALIDADE -->
+          <!-- ========================================== -->
+          <!-- ETAPA 1 DE 5: PEDIDO, MODELO & TECIDO      -->
+          <!-- ========================================== -->
           <div id="step-1" class="step-pane space-y-5">
             <div>
-              <h2 class="text-xl font-black text-brand-navy">Qual é o objetivo do pedido?</h2>
-              <p class="text-xs text-slate-400 font-medium mt-1">Identifique seu grupo ou ocasião para começarmos.</p>
+              <span class="text-[11px] uppercase font-black text-brand-electric tracking-wider">Passo 1</span>
+              <h2 class="text-xl font-black text-brand-navy">Objetivo, Modelo e Tecido</h2>
+              <p class="text-xs text-slate-400 font-medium mt-0.5">Diga qual o tipo de camisa e o tecido desejado.</p>
             </div>
+
+            <!-- Nome do Pedido -->
             <div>
-              <label class="block text-xs font-bold text-slate-700 mb-2" for="inp-pname">Nome do projeto, evento ou empresa *</label>
+              <label class="block text-xs font-bold text-slate-700 mb-1.5" for="inp-pname">Nome do projeto, evento ou empresa *</label>
               <input type="text" id="inp-pname" placeholder="Ex: Uniformes Loja Central, Retiro Jovens 2026..." 
-                class="w-full px-4 py-3.5 rounded-2xl border border-slate-200 text-sm font-bold outline-none focus:border-brand-electric focus:ring-2 focus:ring-blue-50" />
+                class="w-full px-4 py-3 rounded-2xl border border-slate-200 text-sm font-bold outline-none focus:border-brand-electric focus:ring-2 focus:ring-blue-50" />
             </div>
-            <div>
-              <label class="block text-xs font-bold text-slate-700 mb-2">Finalidade Principal *</label>
-              <div class="grid grid-cols-2 gap-2.5" id="grid-purposes"></div>
-            </div>
-            <div>
-              <label class="block text-xs font-bold text-slate-700 mb-2" for="inp-pdesc">Descrição breve (opcional)</label>
-              <textarea id="inp-pdesc" rows="2" placeholder="Conte mais sobre a ocasião ou detalhe que você gostaria..." 
-                class="w-full px-4 py-3 rounded-2xl border border-slate-200 text-xs font-medium outline-none focus:border-brand-electric"></textarea>
-            </div>
-          </div>
 
-          <!-- ETAPA 2: MODELO -->
-          <div id="step-2" class="step-pane hidden space-y-5">
+            <!-- Finalidade -->
             <div>
-              <h2 class="text-xl font-black text-brand-navy">Escolha o modelo da peça</h2>
-              <p class="text-xs text-slate-400 font-medium mt-1">Selecione o corte para este grupo de camisas.</p>
+              <label class="block text-xs font-bold text-slate-700 mb-1.5">Finalidade Principal *</label>
+              <div class="grid grid-cols-2 gap-2" id="grid-purposes"></div>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="grid-models"></div>
 
-            <div id="box-tapabumbum" class="hidden p-4 rounded-2xl bg-brand-ice border border-blue-200 space-y-3">
+            <!-- Modelo -->
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1.5">Modelo da Camisa *</label>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2" id="grid-models"></div>
+            </div>
+
+            <!-- Opção Tapa-Bumbum Condicional -->
+            <div id="box-tapabumbum" class="hidden p-3.5 rounded-2xl bg-brand-ice border border-blue-200 space-y-2.5">
               <span class="block text-xs font-extrabold text-brand-navy">Acabamento da Baby Look:</span>
-              <div class="grid grid-cols-2 gap-2.5">
-                <button type="button" onclick="setTapaBumbum(false)" id="tb-sem" class="p-3 rounded-2xl border text-xs font-bold bg-white">Sem tapa-bumbum (Normal)</button>
-                <button type="button" onclick="setTapaBumbum(true)" id="tb-com" class="p-3 rounded-2xl border text-xs font-bold bg-white">Com tapa-bumbum (Alongada)</button>
+              <div class="grid grid-cols-2 gap-2">
+                <button type="button" onclick="setTapaBumbum(false)" id="tb-sem" class="p-2.5 rounded-xl border text-xs font-bold bg-white">Sem tapa-bumbum (Normal)</button>
+                <button type="button" onclick="setTapaBumbum(true)" id="tb-com" class="p-2.5 rounded-xl border text-xs font-bold bg-white">Com tapa-bumbum (Alongada)</button>
               </div>
             </div>
+
+            <!-- Tecido Desejado -->
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1.5">Tecido Preferido *</label>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2" id="grid-fabrics"></div>
+            </div>
           </div>
 
-          <!-- ETAPA 3: TECIDO (LINGUAGEM PARA LEIGOS) -->
+          <!-- ========================================== -->
+          <!-- ETAPA 2 DE 5: GOLA, MANGAS & CORES        -->
+          <!-- ========================================== -->
+          <div id="step-2" class="step-pane hidden space-y-5">
+            <div>
+              <span class="text-[11px] uppercase font-black text-brand-electric tracking-wider">Passo 2</span>
+              <h2 class="text-xl font-black text-brand-navy">Gola, Mangas e Cor</h2>
+              <p class="text-xs text-slate-400 font-medium mt-0.5">Você pode escolher <strong>manga curta, manga longa ou ambas</strong> com suas quantidades.</p>
+            </div>
+
+            <!-- Gola -->
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1.5">Tipo de Gola *</label>
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-2" id="grid-collars"></div>
+            </div>
+
+            <!-- NOVO: MANGA CURTA E MANGA LONGA COM MÚLTIPLA ESCOLHA E QUANTIDADES -->
+            <div class="p-4 bg-brand-ice/70 rounded-3xl border border-blue-200 space-y-3">
+              <div class="flex items-center justify-between">
+                <label class="block text-xs font-black text-brand-navy">Comprimento das Mangas *</label>
+                <span class="text-[11px] text-brand-electric font-bold">Marque uma ou ambas</span>
+              </div>
+
+              <!-- Manga Curta Card -->
+              <div class="bg-white p-3.5 rounded-2xl border border-slate-200 flex items-center justify-between gap-3">
+                <label class="flex items-center gap-3 cursor-pointer select-none">
+                  <input type="checkbox" id="chk-manga-curta" onchange="toggleMangaOption('curta')" class="w-5 h-5 rounded-lg text-brand-electric focus:ring-0 cursor-pointer" checked />
+                  <div>
+                    <span class="block text-xs font-extrabold text-brand-navy">Manga Curta</span>
+                    <span class="block text-[11px] text-slate-400 font-medium">Tradicional para calor/dia a dia</span>
+                  </div>
+                </label>
+                <div id="box-qtd-curta" class="flex items-center gap-1.5">
+                  <span class="text-[11px] font-bold text-slate-500">Qtd:</span>
+                  <input type="number" min="0" id="inp-qtd-manga-curta" placeholder="0" oninput="updateMangaTotals()"
+                    class="w-16 px-2.5 py-1.5 rounded-xl border border-slate-200 text-xs font-black text-center text-brand-navy outline-none focus:border-brand-electric bg-slate-50" />
+                </div>
+              </div>
+
+              <!-- Manga Longa Card -->
+              <div class="bg-white p-3.5 rounded-2xl border border-slate-200 flex items-center justify-between gap-3">
+                <label class="flex items-center gap-3 cursor-pointer select-none">
+                  <input type="checkbox" id="chk-manga-longa" onchange="toggleMangaOption('longa')" class="w-5 h-5 rounded-lg text-brand-electric focus:ring-0 cursor-pointer" />
+                  <div>
+                    <span class="block text-xs font-extrabold text-brand-navy">Manga Longa</span>
+                    <span class="block text-[11px] text-slate-400 font-medium">Proteção solar ou meia-estação</span>
+                  </div>
+                </label>
+                <div id="box-qtd-longa" class="flex items-center gap-1.5 opacity-50 pointer-events-none">
+                  <span class="text-[11px] font-bold text-slate-500">Qtd:</span>
+                  <input type="number" min="0" id="inp-qtd-manga-longa" placeholder="0" oninput="updateMangaTotals()"
+                    class="w-16 px-2.5 py-1.5 rounded-xl border border-slate-200 text-xs font-black text-center text-brand-navy outline-none focus:border-brand-electric bg-slate-50" />
+                </div>
+              </div>
+
+              <div class="text-[11px] text-brand-navy font-bold flex justify-between px-1">
+                <span>Total pelas mangas:</span>
+                <span id="txt-mangas-sum" class="text-brand-electric font-black">0 peças</span>
+              </div>
+            </div>
+
+            <!-- Cor e Observações -->
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1.5" for="inp-color">Cor da Camisa *</label>
+              <input type="text" id="inp-color" placeholder="Ex: Preto, Azul Marinho, Branco, Chumbo..." 
+                class="w-full px-4 py-3 rounded-2xl border border-slate-200 text-sm font-bold outline-none focus:border-brand-electric" />
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1.5" for="inp-obs">Observações do corte ou peça (opcional)</label>
+              <input type="text" id="inp-obs" placeholder="Ex: Detalhe de viés contrastante na gola..." 
+                class="w-full px-4 py-3 rounded-2xl border border-slate-200 text-xs font-medium outline-none focus:border-brand-electric" />
+            </div>
+          </div>
+
+          <!-- ========================================== -->
+          <!-- ETAPA 3 DE 5: TAMANHOS & QUANTIDADES      -->
+          <!-- ========================================== -->
           <div id="step-3" class="step-pane hidden space-y-5">
             <div>
-              <h2 class="text-xl font-black text-brand-navy">Qual tecido você prefere?</h2>
-              <p class="text-xs text-slate-400 font-medium mt-1">Explicamos de forma simples cada opção abaixo:</p>
-            </div>
-            <div class="grid grid-cols-1 gap-2.5" id="grid-fabrics"></div>
-          </div>
-
-          <!-- ETAPA 4: QUANTIDADES E TAMANHOS -->
-          <div id="step-4" class="step-pane hidden space-y-5">
-            <div>
-              <h2 class="text-xl font-black text-brand-navy">Quantidades por tamanho</h2>
-              <p class="text-xs text-slate-400 font-medium mt-1">Clique em + ou - ou digite os números diretamente.</p>
+              <span class="text-[11px] uppercase font-black text-brand-electric tracking-wider">Passo 3</span>
+              <h2 class="text-xl font-black text-brand-navy">Distribuição por Tamanhos</h2>
+              <p class="text-xs text-slate-400 font-medium mt-0.5">Informe quantas peças de cada tamanho você precisa.</p>
             </div>
 
             <!-- Grade Infantil -->
             <div class="p-4 bg-brand-ice/60 rounded-3xl border border-blue-100">
               <div class="flex justify-between items-center text-xs font-black text-brand-navy mb-3">
                 <span>Tamanhos Infantis</span>
-                <span id="child-sum" class="text-brand-electric font-black bg-white px-3 py-1 rounded-full">0 peças</span>
+                <span id="child-sum" class="text-brand-electric font-black bg-white px-3 py-1 rounded-full shadow-xs">0 peças</span>
               </div>
-              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5" id="grid-child-sizes"></div>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2" id="grid-child-sizes"></div>
             </div>
 
             <!-- Grade Adulto -->
             <div class="p-4 bg-brand-pastelMint/60 rounded-3xl border border-emerald-100">
               <div class="flex justify-between items-center text-xs font-black text-emerald-950 mb-3">
                 <span>Tamanhos Adultos</span>
-                <span id="adult-sum" class="text-emerald-700 font-black bg-white px-3 py-1 rounded-full">0 peças</span>
+                <span id="adult-sum" class="text-emerald-700 font-black bg-white px-3 py-1 rounded-full shadow-xs">0 peças</span>
               </div>
-              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5" id="grid-adult-sizes"></div>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2" id="grid-adult-sizes"></div>
             </div>
 
-            <div class="p-4 bg-blue-50 border border-blue-200 rounded-2xl flex justify-between items-center font-bold text-xs text-brand-navy">
-              <span>Total deste modelo:</span>
-              <span id="item-sum" class="text-brand-electric text-lg font-black">0 peças</span>
+            <div class="p-3.5 bg-blue-50 border border-blue-200 rounded-2xl flex justify-between items-center font-bold text-xs text-brand-navy">
+              <span>Total de peças por tamanho:</span>
+              <span id="item-sum" class="text-brand-electric text-base font-black">0 peças</span>
             </div>
           </div>
 
-          <!-- ETAPA 5: GOLA, MANGA E COR -->
-          <div id="step-5" class="step-pane hidden space-y-5">
+          <!-- ========================================== -->
+          <!-- ETAPA 4 DE 5: ESTAMPA & ARTE              -->
+          <!-- ========================================== -->
+          <div id="step-4" class="step-pane hidden space-y-5">
             <div>
-              <h2 class="text-xl font-black text-brand-navy">Gola, manga e cor</h2>
-              <p class="text-xs text-slate-400 font-medium mt-1">Como deve ser a costura e o tom da camisa?</p>
+              <span class="text-[11px] uppercase font-black text-brand-electric tracking-wider">Passo 4</span>
+              <h2 class="text-xl font-black text-brand-navy">Personalização & Estampa</h2>
+              <p class="text-xs text-slate-400 font-medium mt-0.5">Marque os locais onde deseja estampar e a situação da arte.</p>
             </div>
+
+            <!-- Locais com Múltipla Escolha -->
             <div>
-              <label class="block text-xs font-bold text-slate-700 mb-2">Tipo de Gola *</label>
-              <div class="grid grid-cols-2 sm:grid-cols-3 gap-2" id="grid-collars"></div>
+              <label class="block text-xs font-bold text-slate-700 mb-1.5">Onde vai a estampa? (pode marcar mais de um) *</label>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5" id="print-locations-container"></div>
+              <div class="mt-2 text-[11px] font-bold text-brand-electric" id="txt-selected-locations">Nenhum local marcado ainda</div>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
-              <div>
-                <label class="block text-xs font-bold text-slate-700 mb-2">Comprimento da Manga *</label>
-                <div class="grid grid-cols-2 gap-2">
-                  <button type="button" onclick="setSleeve('Manga curta')" id="slv-curta" class="p-3.5 rounded-2xl border text-xs font-bold bg-white">Manga curta</button>
-                  <button type="button" onclick="setSleeve('Manga longa')" id="slv-longa" class="p-3.5 rounded-2xl border text-xs font-bold bg-white">Manga longa</button>
-                </div>
-              </div>
-              <div>
-                <label class="block text-xs font-bold text-slate-700 mb-2" for="inp-color">Cor da Camisa *</label>
-                <input type="text" id="inp-color" placeholder="Ex: Preto, Azul Marinho, Branco..." 
-                  class="w-full px-4 py-3.5 rounded-2xl border border-slate-200 text-sm font-bold outline-none focus:border-brand-electric" />
-              </div>
-            </div>
+
+            <!-- Quantas Cores -->
             <div>
-              <label class="block text-xs font-bold text-slate-700 mb-2" for="inp-obs">Observações do corte ou peça (opcional)</label>
-              <input type="text" id="inp-obs" placeholder="Ex: Detalhe de viés contrastante..." 
-                class="w-full px-4 py-3 rounded-2xl border border-slate-200 text-xs font-medium outline-none focus:border-brand-electric" />
+              <label class="block text-xs font-bold text-slate-700 mb-1.5">Quantas cores tem a sua estampa? *</label>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2" id="grid-colors-count"></div>
             </div>
-          </div>
 
-          <!-- ETAPA 6: ONDE VAI A ESTAMPA (MÚLTIPLA ESCOLHA CLARA) -->
-          <div id="step-6" class="step-pane hidden space-y-5">
+            <!-- Situação da Arte -->
             <div>
-              <h2 class="text-xl font-black text-brand-navy">Onde vai a personalização?</h2>
-              <p class="text-xs text-slate-400 font-medium mt-1">Toque nos locais onde deseja estampar (pode marcar mais de um):</p>
+              <label class="block text-xs font-bold text-slate-700 mb-1.5">Situação da Arte *</label>
+              <div class="space-y-2" id="grid-art"></div>
             </div>
 
-            <!-- Botões Grandes de Múltipla Escolha -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="print-locations-container">
-              <!-- Renderizado via JS com checkbox visual -->
-            </div>
-
-            <!-- Resumo da Seleção de Locais -->
-            <div class="p-3.5 bg-brand-ice rounded-2xl border border-blue-200 text-xs text-brand-navy font-bold flex items-center justify-between">
-              <span>Locais escolhidos:</span>
-              <span id="txt-selected-locations" class="text-brand-electric font-black">Nenhum marcado ainda</span>
-            </div>
-
-            <!-- Quantas Cores tem a Arte? (Linguagem para leigos) -->
-            <div class="pt-2">
-              <label class="block text-xs font-bold text-slate-700 mb-2">Quantas cores tem a sua estampa? *</label>
-              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2" id="grid-colors-count">
-                <!-- Renderizado via JS -->
-              </div>
-            </div>
-
-            <div>
-              <label class="block text-xs font-bold text-slate-700 mb-2" for="inp-print-desc">O que vai escrito ou desenhado? (opcional)</label>
-              <input type="text" id="inp-print-desc" placeholder="Ex: Logo da empresa na frente e frase bíblica nas costas..." 
-                class="w-full px-4 py-3.5 rounded-2xl border border-slate-200 text-xs font-medium outline-none focus:border-brand-electric" />
-            </div>
-          </div>
-
-          <!-- ETAPA 7: SITUAÇÃO DA ARTE (SEM ANEXO DUPLICADO) -->
-          <div id="step-7" class="step-pane hidden space-y-5">
-            <div>
-              <h2 class="text-xl font-black text-brand-navy">Situação da arte da estampa</h2>
-              <p class="text-xs text-slate-400 font-medium mt-1">Você já tem o desenho ou precisa de ajuda para criar?</p>
-            </div>
-            
-            <div class="space-y-3" id="grid-art"></div>
-
-            <!-- Aviso Claro sobre Envio Direto no WhatsApp -->
-            <div class="p-4 rounded-3xl bg-brand-pastelPeach border border-orange-200 text-xs space-y-2">
-              <span class="font-black text-amber-950 flex items-center gap-2">
-                <span class="text-base">📲</span> Como enviar seu logotipo ou imagens:
+            <!-- Aviso Descomplicado do WhatsApp -->
+            <div class="p-4 rounded-3xl bg-brand-pastelPeach border border-orange-200 text-xs space-y-1.5">
+              <span class="font-black text-amber-950 flex items-center gap-1.5">
+                <span>📲</span> Como enviar seu logotipo ou ideia:
               </span>
               <p class="text-amber-900/90 leading-relaxed font-medium text-[11px]">
-                Para maior qualidade e facilidade, <strong>não precisa anexar nada aqui no site</strong>. Ao clicar em enviar, a conversa do WhatsApp abrirá automaticamente e você poderá enviar suas fotos, referências e logos diretamente por lá!
+                Não precisa anexar nada aqui no site! Ao enviar o pedido, a conversa do WhatsApp abrirá e você enviará os arquivos ou fotos diretamente para nossa equipe.
               </p>
             </div>
 
             <div>
-              <label class="block text-xs font-bold text-slate-700 mb-2" for="inp-art-notes">Observações sobre a arte (opcional)</label>
-              <textarea id="inp-art-notes" rows="2" placeholder="Cores de preferência, fontes ou frases exatas..." 
-                class="w-full px-4 py-3 rounded-2xl border border-slate-200 text-xs font-medium outline-none focus:border-brand-electric"></textarea>
+              <label class="block text-xs font-bold text-slate-700 mb-1.5" for="inp-print-desc">Observações da arte ou frase (opcional)</label>
+              <input type="text" id="inp-print-desc" placeholder="Ex: Logo na frente e frase com versículo nas costas..." 
+                class="w-full px-4 py-3 rounded-2xl border border-slate-200 text-xs font-medium outline-none focus:border-brand-electric" />
             </div>
           </div>
 
-          <!-- ETAPA 8: RESUMO MULTI-ITEM -->
-          <div id="step-8" class="step-pane hidden space-y-5">
+          <!-- ========================================== -->
+          <!-- ETAPA 5 DE 5: SEUS DADOS, PRAZO & REVISÃO  -->
+          <!-- ========================================== -->
+          <div id="step-5" class="step-pane hidden space-y-5">
             <div>
-              <h2 class="text-xl font-black text-brand-navy">Camisas do seu pedido</h2>
-              <p class="text-xs text-slate-400 font-medium mt-1">Você pode adicionar outro modelo com quantidades diferentes.</p>
+              <span class="text-[11px] uppercase font-black text-brand-electric tracking-wider">Passo 5</span>
+              <h2 class="text-xl font-black text-brand-navy">Dados de Contato & Revisão</h2>
+              <p class="text-xs text-slate-400 font-medium mt-0.5">Revise o pedido e clique no botão verde para enviar no WhatsApp.</p>
             </div>
 
-            <div id="configured-items-list" class="space-y-3"></div>
+            <!-- Lista de Camisas (Multi-item) -->
+            <div class="space-y-2.5">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-black text-brand-navy">Camisas do Pedido:</span>
+                <button type="button" onclick="addNewItem()" class="text-xs font-black text-brand-electric hover:underline flex items-center gap-1">
+                  + Adicionar outro modelo
+                </button>
+              </div>
+              <div id="configured-items-list" class="space-y-2.5"></div>
+            </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-              <button type="button" onclick="addNewItem()" class="p-4 rounded-2xl border-2 border-dashed border-brand-electric text-brand-electric font-black text-xs hover:bg-brand-ice active:scale-95 transition-all">
-                + Adicionar Outro Modelo
-              </button>
-              <button type="button" onclick="goToStep(9)" class="p-4 rounded-2xl bg-brand-electric text-white font-black text-xs hover:bg-blue-600 active:scale-95 transition-all shadow-md">
-                Continuar para Meus Dados →
-              </button>
-            </div>
-          </div>
-
-          <!-- ETAPA 9: SEUS DADOS -->
-          <div id="step-9" class="step-pane hidden space-y-5">
-            <div>
-              <h2 class="text-xl font-black text-brand-navy">Seus dados para contato</h2>
-              <p class="text-xs text-slate-400 font-medium mt-1">Apenas o essencial para prepararmos seu orçamento.</p>
-            </div>
-            <div>
-              <label class="block text-xs font-bold text-slate-700 mb-2" for="inp-cname">Seu Nome Completo *</label>
-              <input type="text" id="inp-cname" placeholder="Ex: Mariana Silva" 
-                class="w-full px-4 py-3.5 rounded-2xl border border-slate-200 text-sm font-bold outline-none focus:border-brand-electric" />
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <!-- Dados do Solicitante -->
+            <div class="pt-2 border-t border-slate-100 space-y-3">
               <div>
-                <label class="block text-xs font-bold text-slate-700 mb-2" for="inp-cphone">Seu WhatsApp com DDD *</label>
-                <input type="tel" id="inp-cphone" placeholder="Ex: (22) 99845-1339" 
-                  class="w-full px-4 py-3.5 rounded-2xl border border-slate-200 text-sm font-bold outline-none focus:border-brand-electric" />
+                <label class="block text-xs font-bold text-slate-700 mb-1" for="inp-cname">Seu Nome Completo *</label>
+                <input type="text" id="inp-cname" placeholder="Ex: Mariana Silva" 
+                  class="w-full px-4 py-3 rounded-2xl border border-slate-200 text-sm font-bold outline-none focus:border-brand-electric" />
               </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1" for="inp-cphone">Seu WhatsApp com DDD *</label>
+                  <input type="tel" id="inp-cphone" placeholder="Ex: (22) 99845-1339" 
+                    class="w-full px-4 py-3 rounded-2xl border border-slate-200 text-sm font-bold outline-none focus:border-brand-electric" />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1" for="inp-ccity">Cidade e Bairro *</label>
+                  <input type="text" id="inp-ccity" placeholder="Ex: Nova Friburgo / Olaria" 
+                    class="w-full px-4 py-3 rounded-2xl border border-slate-200 text-sm font-bold outline-none focus:border-brand-electric" />
+                </div>
+              </div>
+
+              <!-- DATA PARA RECEBER: MÍNIMO 25 DIAS ÚTEIS COM AVISO DE URGÊNCIA -->
               <div>
-                <label class="block text-xs font-bold text-slate-700 mb-2" for="inp-ccity">Cidade e Bairro *</label>
-                <input type="text" id="inp-ccity" placeholder="Ex: Nova Friburgo / Olaria" 
-                  class="w-full px-4 py-3.5 rounded-2xl border border-slate-200 text-sm font-bold outline-none focus:border-brand-electric" />
+                <div class="flex items-center justify-between mb-1">
+                  <label class="block text-xs font-bold text-slate-700" for="inp-cdate">Data desejada para receber (opcional)</label>
+                  <span class="text-[10px] font-black text-brand-electric bg-blue-50 px-2 py-0.5 rounded-md">Mínimo 25 dias úteis</span>
+                </div>
+                <input type="date" id="inp-cdate" 
+                  class="w-full px-4 py-3 rounded-2xl border border-slate-200 text-xs font-bold outline-none focus:border-brand-electric text-slate-700" />
+                
+                <!-- AVISO OFICIAL DE PRAZO E URGÊNCIA CONFORME PEDIDO -->
+                <p class="text-[11px] text-slate-500 font-medium leading-relaxed mt-1.5 bg-slate-50 p-3 rounded-2xl border border-slate-200">
+                  ⏳ <strong>Prazo de confecção:</strong> Disponível a partir de <strong>25 dias úteis</strong> (podendo ser entregue antes dependendo do fluxo). <em>Se tiver urgência ou data de evento mais próxima, descreva no campo de observações abaixo para avaliarmos um encaixe na produção.</em>
+                </p>
               </div>
-            </div>
-            <div>
-              <label class="block text-xs font-bold text-slate-700 mb-2" for="inp-cdate">Data desejada para receber (opcional)</label>
-              <input type="date" id="inp-cdate" 
-                class="w-full px-4 py-3 rounded-2xl border border-slate-200 text-xs font-bold outline-none focus:border-brand-electric text-slate-700" />
-            </div>
-            <div>
-              <label class="block text-xs font-bold text-slate-700 mb-2" for="inp-cnotes">Observações finais (opcional)</label>
-              <textarea id="inp-cnotes" rows="2" placeholder="Alguma dúvida ou urgência na entrega?" 
-                class="w-full px-4 py-3 rounded-2xl border border-slate-200 text-xs font-medium outline-none focus:border-brand-electric"></textarea>
-            </div>
-          </div>
 
-          <!-- ETAPA 10: REVISÃO E WHATSAPP -->
-          <div id="step-10" class="step-pane hidden space-y-5">
-            <div>
-              <h2 class="text-xl font-black text-brand-navy">Revisão do Pedido</h2>
-              <p class="text-xs text-slate-400 font-medium mt-1">Confira seu resumo antes de enviar para a Manancial Styllo.</p>
-            </div>
-
-            <div class="p-4 bg-brand-ice/60 rounded-3xl border border-blue-100 text-xs space-y-3">
-              <div class="border-b border-blue-100 pb-2.5">
-                <span class="font-black text-brand-navy block mb-1">👤 Solicitante</span>
-                <p id="rev-client" class="text-slate-600 font-medium leading-relaxed"></p>
-              </div>
               <div>
-                <span class="font-black text-brand-navy block mb-2">📦 Camisas Configuradas</span>
-                <div id="rev-items" class="space-y-2.5"></div>
+                <label class="block text-xs font-bold text-slate-700 mb-1" for="inp-cnotes">Observações ou urgência de entrega (opcional)</label>
+                <textarea id="inp-cnotes" rows="2" placeholder="Ex: Preciso para o congresso no dia X, tem como adiantar?..." 
+                  class="w-full px-4 py-2.5 rounded-2xl border border-slate-200 text-xs font-medium outline-none focus:border-brand-electric"></textarea>
               </div>
             </div>
 
-            <!-- Aviso obrigatório conforme diretriz -->
-            <div class="p-4 bg-brand-pastelYellow border border-amber-200 rounded-2xl text-amber-950 text-xs font-medium leading-relaxed">
+            <!-- Aviso Legal Obrigatório -->
+            <div class="p-3.5 bg-brand-pastelYellow border border-amber-200 rounded-2xl text-amber-950 text-xs font-medium leading-relaxed">
               <strong>Importante:</strong> Este pedido é uma solicitação de orçamento. Valores, disponibilidade, detalhes técnicos e prazo de produção serão confirmados pela Manancial Styllo.
             </div>
 
+            <!-- Botão Enviar Pedido no WhatsApp -->
             <button type="button" onclick="sendToWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-black p-4 rounded-2xl shadow-lg shadow-emerald-700/25 transition-all text-base flex items-center justify-center gap-2">
               <span>💬 Enviar Pedido pelo WhatsApp</span>
-            </button>
-
-            <button type="button" onclick="goToStep(8)" class="w-full text-center text-xs font-black text-slate-400 hover:text-brand-navy py-1">
-              ← Deseja adicionar ou editar algum modelo?
             </button>
           </div>
 
           <!-- BOTÕES DE NAVEGAÇÃO -->
           <div class="pt-6 border-t border-slate-100 mt-6 flex justify-between gap-3" id="nav-actions">
-            <button type="button" id="btn-back" onclick="prevStep()" class="px-5 py-3.5 rounded-2xl border border-slate-200 text-xs font-black text-slate-600 hover:bg-slate-50 transition-all">
+            <button type="button" id="btn-back" onclick="prevStep()" class="px-5 py-3 rounded-2xl border border-slate-200 text-xs font-black text-slate-600 hover:bg-slate-50 transition-all">
               Voltar
             </button>
-            <button type="button" id="btn-next" onclick="nextStep()" class="px-7 py-3.5 rounded-2xl bg-brand-navy hover:bg-slate-900 active:scale-95 text-white text-xs font-black transition-all ml-auto shadow-md">
+            <button type="button" id="btn-next" onclick="nextStep()" class="px-7 py-3 rounded-2xl bg-gradient-to-r from-brand-navy to-blue-900 hover:from-slate-900 hover:to-brand-navy active:scale-95 text-white text-xs font-black transition-all ml-auto shadow-md">
               Avançar
             </button>
           </div>
@@ -450,7 +482,7 @@
     </section>
 
     <!-- PRODUTOS FUTUROS (PREPARAÇÃO) -->
-    <section class="py-8 bg-brand-ice/40 border-t border-blue-100 text-center px-4">
+    <section class="py-8 bg-brand-ice/40 border-t border-blue-100 text-center px-4 reveal-on-scroll">
       <div class="max-w-md mx-auto space-y-1">
         <span class="text-[11px] font-black text-brand-navy uppercase tracking-widest block">Linha Automotiva & Brindes</span>
         <p class="text-xs text-slate-500 font-medium leading-relaxed">
@@ -480,7 +512,7 @@
     </div>
   </footer>
 
-  <!-- SCRIPT COMPLETO OTIMIZADO -->
+  <!-- SCRIPT COMPLETO E INTEGRADO -->
   <script>
     // CONFIGURAÇÃO CENTRALIZADA
     const CONFIG = {
@@ -500,12 +532,12 @@
         { label: "Preciso de Ajuda", desc: "Orientamos você na escolha ideal." }
       ],
       fabrics: [
-        { name: "Algodão Conforto", desc: "Macio, fresco e confortável para o dia a dia e uniformes." },
+        { name: "Algodão Conforto", desc: "Macio, fresco e natural para o dia a dia." },
         { name: "Dry Fit Esportivo", desc: "Leve, respirável, não esquenta e seca rápido." },
-        { name: "PV (Malha Fria)", desc: "Muito durável, quase não amassa e não desbota." },
+        { name: "PV (Malha Fria)", desc: "Durável, quase não amassa e não desbota." },
         { name: "PP (100% Poliéster)", desc: "Ideal para estampas coloridas por sublimação." },
-        { name: "Outro Tecido", desc: "Romantic, microfibra ou especificação especial." },
-        { name: "Preciso de Orientação", desc: "Indique o que deseja e indicamos o tecido." }
+        { name: "Outro Tecido", desc: "Romantic, microfibra ou sob medida." },
+        { name: "Preciso de Ajuda", desc: "Indique o que quer e indicamos o tecido." }
       ],
       collars: ["Gola Redonda (Careca)", "Gola V", "Gola Polo", "Outra Gola", "Preciso de Orientação"],
       locations: [
@@ -516,8 +548,8 @@
       ],
       colorOptions: ["1 Cor só", "2 Cores", "Várias Cores / Foto", "Não tenho certeza"],
       artOptions: [
-        { label: "Sim, já tenho a arte pronta", desc: "Tenho o arquivo em alta qualidade ou vetor." },
-        { label: "Tenho uma ideia, preciso que criem", desc: "Tenho imagens de inspiração e textos." },
+        { label: "Sim, já tenho a arte pronta", desc: "Tenho o arquivo em vetor ou alta qualidade." },
+        { label: "Tenho ideia, preciso que criem", desc: "Tenho textos e imagens de inspiração." },
         { label: "Preciso de orientação da equipe", desc: "Gostaria de ver o que fica melhor." }
       ],
       cSizes: ["PP infantil", "P infantil", "M infantil", "G infantil"],
@@ -527,7 +559,7 @@
     const state = {
       step: 1,
       currIdx: 0,
-      customer: { name: "", phone: "", city: "", date: "", notes: "", projName: "", purpose: "", projDesc: "" },
+      customer: { name: "", phone: "", city: "", date: "", notes: "", projName: "", purpose: "" },
       items: []
     };
 
@@ -541,14 +573,17 @@
         hasTapaBumbum: false,
         fabric: "",
         collar: "",
-        sleeve: "Manga curta",
+        // Novo suporte completo para Manga Curta e Longa simultâneas com quantidades
+        hasMangaCurta: true,
+        qtdMangaCurta: 0,
+        hasMangaLonga: false,
+        qtdMangaLonga: 0,
         color: "",
         obs: "",
-        locations: [], // Array de locais marcados
+        locations: [],
         colorsCount: "",
         printDesc: "",
         artStatus: "",
-        artNotes: "",
         sizes: sz
       };
     }
@@ -558,7 +593,45 @@
     document.addEventListener("DOMContentLoaded", () => {
       document.getElementById('year').textContent = new Date().getFullYear();
       initUI();
+      initMinDateBusinessDays();
+      initScrollAnimations();
     });
+
+    // CÁLCULO DE MÍNIMO 25 DIAS ÚTEIS (PULANDO SÁBADOS E DOMINGOS)
+    function initMinDateBusinessDays() {
+      let d = new Date();
+      let added = 0;
+      while (added < 25) {
+        d.setDate(d.getDate() + 1);
+        let dayOfWeek = d.getDay();
+        if (dayOfWeek !== 0 && dayOfWeek !== 6) { // Pula Domingo (0) e Sábado (6)
+          added++;
+        }
+      }
+      const yyyy = d.getFullYear();
+      const mm = String(d.getMonth() + 1).padStart(2, '0');
+      const dd = String(d.getDate()).padStart(2, '0');
+      const minDateStr = `${yyyy}-${mm}-${dd}`;
+
+      const dateInput = document.getElementById('inp-cdate');
+      if (dateInput) {
+        dateInput.min = minDateStr;
+      }
+    }
+
+    // ANIMAÇÕES SUAVES DE ROLAGEM
+    function initScrollAnimations() {
+      const reveals = document.querySelectorAll('.reveal-on-scroll');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      reveals.forEach(r => observer.observe(r));
+    }
 
     function scrollToConfig() {
       document.getElementById('configurador').scrollIntoView({ behavior: 'smooth' });
@@ -575,7 +648,7 @@
 
       // Modelos
       document.getElementById('grid-models').innerHTML = CONFIG.models.map(m => `
-        <button type="button" onclick="selectModel('${m.label}')" class="btn-card model-btn p-3.5 rounded-2xl border border-slate-200 text-left bg-white">
+        <button type="button" onclick="selectModel('${m.label}')" class="btn-card model-btn p-3 rounded-2xl border border-slate-200 text-left bg-white">
           <span class="font-extrabold text-xs block text-brand-navy">${m.label}</span>
           <span class="text-[11px] text-slate-400 font-medium block mt-0.5">${m.desc}</span>
         </button>
@@ -583,7 +656,7 @@
 
       // Tecidos
       document.getElementById('grid-fabrics').innerHTML = CONFIG.fabrics.map(f => `
-        <button type="button" onclick="selectFabric('${f.name}')" class="btn-card fabric-btn p-3.5 rounded-2xl border border-slate-200 text-left bg-white">
+        <button type="button" onclick="selectFabric('${f.name}')" class="btn-card fabric-btn p-3 rounded-2xl border border-slate-200 text-left bg-white">
           <span class="font-extrabold text-xs block text-brand-navy">${f.name}</span>
           <span class="text-[11px] text-slate-400 font-medium block mt-0.5">${f.desc}</span>
         </button>
@@ -608,9 +681,9 @@
         <button type="button" onclick="selectCollar('${c}')" class="btn-card collar-btn p-3 rounded-2xl border border-slate-200 text-xs font-bold bg-white">${c}</button>
       `).join('');
 
-      // Locais de Estampa (Múltipla Escolha com Checkbox)
+      // Locais de Estampa (Múltipla Escolha)
       document.getElementById('print-locations-container').innerHTML = CONFIG.locations.map(loc => `
-        <div onclick="togglePrintLocation('${loc.label}')" id="card-loc-${clean(loc.id)}" class="p-3.5 rounded-2xl border border-slate-200 bg-white cursor-pointer select-none flex items-start gap-3 transition-all hover:border-brand-electric">
+        <div onclick="togglePrintLocation('${loc.label}')" id="card-loc-${clean(loc.id)}" class="p-3 rounded-2xl border border-slate-200 bg-white cursor-pointer select-none flex items-start gap-3 transition-all hover:border-brand-electric">
           <div id="check-loc-${clean(loc.id)}" class="check-box w-5 h-5 rounded-lg border-2 border-slate-300 flex items-center justify-center text-xs font-black flex-shrink-0 mt-0.5">
             ✓
           </div>
@@ -623,12 +696,12 @@
 
       // Cores da Estampa
       document.getElementById('grid-colors-count').innerHTML = CONFIG.colorOptions.map(opt => `
-        <button type="button" onclick="selectColorsCount('${opt}')" class="btn-card color-btn p-3 rounded-2xl border border-slate-200 text-xs font-bold bg-white text-center">${opt}</button>
+        <button type="button" onclick="selectColorsCount('${opt}')" class="btn-card color-btn p-2.5 rounded-2xl border border-slate-200 text-xs font-bold bg-white text-center">${opt}</button>
       `).join('');
 
       // Arte
       document.getElementById('grid-art').innerHTML = CONFIG.artOptions.map(a => `
-        <button type="button" onclick="selectArt('${a.label}')" class="btn-card art-btn w-full p-3.5 rounded-2xl border border-slate-200 text-left bg-white">
+        <button type="button" onclick="selectArt('${a.label}')" class="btn-card art-btn w-full p-3 rounded-2xl border border-slate-200 text-left bg-white">
           <span class="font-extrabold text-xs block text-brand-navy">${a.label}</span>
           <span class="text-[11px] text-slate-400 font-medium block mt-0.5">${a.desc}</span>
         </button>
@@ -653,8 +726,8 @@
 
     function setTapaBumbum(val) {
       state.items[state.currIdx].hasTapaBumbum = val;
-      document.getElementById('tb-sem').className = `p-3 rounded-2xl border text-xs font-bold ${!val ? 'bg-brand-electric text-white' : 'bg-white'}`;
-      document.getElementById('tb-com').className = `p-3 rounded-2xl border text-xs font-bold ${val ? 'bg-brand-electric text-white' : 'bg-white'}`;
+      document.getElementById('tb-sem').className = `p-2.5 rounded-xl border text-xs font-bold ${!val ? 'bg-brand-electric text-white' : 'bg-white'}`;
+      document.getElementById('tb-com').className = `p-2.5 rounded-xl border text-xs font-bold ${val ? 'bg-brand-electric text-white' : 'bg-white'}`;
     }
 
     function selectFabric(f) {
@@ -662,6 +735,50 @@
       markActive('.fabric-btn', f);
     }
 
+    function selectCollar(c) {
+      state.items[state.currIdx].collar = c;
+      markActive('.collar-btn', c);
+    }
+
+    // MANGA CURTA E MANGA LONGA INTERATIVAS
+    function toggleMangaOption(type) {
+      const it = state.items[state.currIdx];
+      if (type === 'curta') {
+        const isChecked = document.getElementById('chk-manga-curta').checked;
+        it.hasMangaCurta = isChecked;
+        const box = document.getElementById('box-qtd-curta');
+        box.classList.toggle('opacity-50', !isChecked);
+        box.classList.toggle('pointer-events-none', !isChecked);
+        if (!isChecked) {
+          document.getElementById('inp-qtd-manga-curta').value = '';
+          it.qtdMangaCurta = 0;
+        }
+      } else {
+        const isChecked = document.getElementById('chk-manga-longa').checked;
+        it.hasMangaLonga = isChecked;
+        const box = document.getElementById('box-qtd-longa');
+        box.classList.toggle('opacity-50', !isChecked);
+        box.classList.toggle('pointer-events-none', !isChecked);
+        if (!isChecked) {
+          document.getElementById('inp-qtd-manga-longa').value = '';
+          it.qtdMangaLonga = 0;
+        }
+      }
+      updateMangaTotals();
+    }
+
+    function updateMangaTotals() {
+      const it = state.items[state.currIdx];
+      const qCurta = parseInt(document.getElementById('inp-qtd-manga-curta').value, 10) || 0;
+      const qLonga = parseInt(document.getElementById('inp-qtd-manga-longa').value, 10) || 0;
+      it.qtdMangaCurta = qCurta;
+      it.qtdMangaLonga = qLonga;
+      
+      const total = (it.hasMangaCurta ? qCurta : 0) + (it.hasMangaLonga ? qLonga : 0);
+      document.getElementById('txt-mangas-sum').textContent = `${total} peças informadas`;
+    }
+
+    // TAMANHOS
     function adjustSize(s, delta) {
       const it = state.items[state.currIdx];
       it.sizes[s] = Math.max(0, (it.sizes[s] || 0) + delta);
@@ -692,17 +809,6 @@
       document.getElementById('txt-total-counter').textContent = `Total: ${grand} peças`;
     }
 
-    function selectCollar(c) {
-      state.items[state.currIdx].collar = c;
-      markActive('.collar-btn', c);
-    }
-
-    function setSleeve(type) {
-      state.items[state.currIdx].sleeve = type;
-      document.getElementById('slv-curta').className = `p-3.5 rounded-2xl border text-xs font-bold ${type === 'Manga curta' ? 'bg-brand-electric text-white' : 'bg-white'}`;
-      document.getElementById('slv-longa').className = `p-3.5 rounded-2xl border text-xs font-bold ${type === 'Manga longa' ? 'bg-brand-electric text-white' : 'bg-white'}`;
-    }
-
     // MÚLTIPLA ESCOLHA DE LOCAIS DE ESTAMPA
     function togglePrintLocation(locLabel) {
       const it = state.items[state.currIdx];
@@ -718,26 +824,27 @@
 
     function updateLocationsUI() {
       const it = state.items[state.currIdx];
-      
       CONFIG.locations.forEach(loc => {
         const card = document.getElementById(`card-loc-${clean(loc.id)}`);
         const check = document.getElementById(`check-loc-${clean(loc.id)}`);
         const isSelected = it.locations.includes(loc.label);
 
-        if (isSelected) {
-          card.classList.add('border-brand-electric', 'bg-brand-ice');
-          check.classList.add('active');
-        } else {
-          card.classList.remove('border-brand-electric', 'bg-brand-ice');
-          check.classList.remove('active');
+        if (card && check) {
+          if (isSelected) {
+            card.classList.add('border-brand-electric', 'bg-brand-ice');
+            check.classList.add('active');
+          } else {
+            card.classList.remove('border-brand-electric', 'bg-brand-ice');
+            check.classList.remove('active');
+          }
         }
       });
 
       const label = document.getElementById('txt-selected-locations');
       if (it.locations.length === 0) {
-        label.textContent = "Nenhum marcado ainda";
+        label.textContent = "Nenhum local marcado ainda";
       } else {
-        label.textContent = `${it.locations.length} local(is): ${it.locations.join(' + ')}`;
+        label.textContent = `✓ Selecionado: ${it.locations.join(' + ')}`;
       }
     }
 
@@ -757,7 +864,7 @@
       });
     }
 
-    // NAVEGAÇÃO E ETAPAS
+    // NAVEGAÇÃO ENTRE AS 5 ETAPAS
     function goToStep(s) {
       if (s > state.step && !validate(state.step)) return;
       saveInputs();
@@ -767,41 +874,45 @@
       document.getElementById(`step-${s}`).classList.remove('hidden');
 
       const titles = [
-        "1. Finalidade", "2. Modelo", "3. Tecido", "4. Tamanhos", "5. Gola e Cor",
-        "6. Estampa", "7. Situação da Arte", "8. Camisas do Pedido", "9. Seus Dados", "10. Revisão"
+        "Etapa 1: Pedido & Modelo",
+        "Etapa 2: Gola, Mangas & Cores",
+        "Etapa 3: Tamanhos & Quantidades",
+        "Etapa 4: Estampa & Arte",
+        "Etapa 5: Dados, Prazo & Envio"
       ];
       document.getElementById('txt-step-name').textContent = titles[s - 1];
-      document.getElementById('txt-step-count').textContent = `Etapa ${s} de 10`;
-      document.getElementById('bar-fill').style.width = `${s * 10}%`;
+      document.getElementById('txt-step-count').textContent = `${s} de 5`;
+      document.getElementById('bar-fill').style.width = `${s * 20}%`;
       document.getElementById('txt-item-badge').textContent = state.items[state.currIdx].title;
 
       document.getElementById('btn-back').style.visibility = s === 1 ? 'hidden' : 'visible';
-      document.getElementById('btn-next').style.display = (s === 8 || s === 10) ? 'none' : 'block';
+      document.getElementById('btn-next').style.display = s === 5 ? 'none' : 'block';
 
-      if (s === 6) updateLocationsUI();
-      if (s === 8) renderStep8();
-      if (s === 10) renderStep10();
+      if (s === 4) updateLocationsUI();
+      if (s === 5) renderStep5Review();
 
       const card = document.getElementById('configurador');
       if (card) {
-        const yOffset = -70;
-        const y = card.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        const y = card.getBoundingClientRect().top + window.pageYOffset - 75;
         window.scrollTo({ top: y, behavior: 'smooth' });
       }
     }
 
-    function nextStep() { if (state.step < 10) goToStep(state.step + 1); }
+    function nextStep() { if (state.step < 5) goToStep(state.step + 1); }
     function prevStep() { if (state.step > 1) goToStep(state.step - 1); }
 
     function saveInputs() {
       state.customer.projName = document.getElementById('inp-pname').value.trim();
-      state.customer.projDesc = document.getElementById('inp-pdesc').value.trim();
 
       const it = state.items[state.currIdx];
       it.color = document.getElementById('inp-color').value.trim();
       it.obs = document.getElementById('inp-obs').value.trim();
       it.printDesc = document.getElementById('inp-print-desc').value.trim();
-      it.artNotes = document.getElementById('inp-art-notes').value.trim();
+
+      it.hasMangaCurta = document.getElementById('chk-manga-curta').checked;
+      it.qtdMangaCurta = parseInt(document.getElementById('inp-qtd-manga-curta').value, 10) || 0;
+      it.hasMangaLonga = document.getElementById('chk-manga-longa').checked;
+      it.qtdMangaLonga = parseInt(document.getElementById('inp-qtd-manga-longa').value, 10) || 0;
 
       state.customer.name = document.getElementById('inp-cname').value.trim();
       state.customer.phone = document.getElementById('inp-cphone').value.trim();
@@ -815,56 +926,59 @@
       if (s === 1) {
         if (!document.getElementById('inp-pname').value.trim()) { alert("Por favor, dê um nome para o seu pedido."); return false; }
         if (!state.customer.purpose) { alert("Selecione a finalidade principal."); return false; }
+        if (!it.model) { alert("Escolha o modelo da camisa."); return false; }
+        if (!it.fabric) { alert("Escolha o tecido desejado."); return false; }
       }
-      if (s === 2 && !it.model) { alert("Escolha o corte/modelo da camisa."); return false; }
-      if (s === 3 && !it.fabric) { alert("Escolha o tecido desejado."); return false; }
-      if (s === 4) {
+      if (s === 2) {
+        if (!it.collar) { alert("Selecione o tipo de gola."); return false; }
+        const hasCurta = document.getElementById('chk-manga-curta').checked;
+        const hasLonga = document.getElementById('chk-manga-longa').checked;
+        if (!hasCurta && !hasLonga) { alert("Marque pelo menos uma opção: Manga Curta ou Manga Longa."); return false; }
+        if (!document.getElementById('inp-color').value.trim()) { alert("Informe a cor desejada para a camisa."); return false; }
+      }
+      if (s === 3) {
         let tot = 0;
         Object.values(it.sizes).forEach(q => tot += q);
         if (tot === 0) { alert("Adicione pelo menos 1 peça na grade de tamanhos."); return false; }
       }
-      if (s === 5) {
-        if (!it.collar) { alert("Selecione o tipo de gola."); return false; }
-        if (!document.getElementById('inp-color').value.trim()) { alert("Informe a cor desejada."); return false; }
-      }
-      if (s === 6) {
-        if (it.locations.length === 0) { alert("Marque pelo menos um local para a estampa (ex: Frente, Costas ou Manga)."); return false; }
+      if (s === 4) {
+        if (it.locations.length === 0) { alert("Marque pelo menos um local para a estampa (Frente, Costas ou Manga)."); return false; }
         if (!it.colorsCount) { alert("Informe quantas cores tem a estampa."); return false; }
-      }
-      if (s === 7 && !it.artStatus) { alert("Informe a situação da sua arte."); return false; }
-      if (s === 9) {
-        if (!document.getElementById('inp-cname').value.trim() || !document.getElementById('inp-cphone').value.trim() || !document.getElementById('inp-ccity').value.trim()) {
-          alert("Preencha Nome, WhatsApp e Cidade obrigatoriamente.");
-          return false;
-        }
+        if (!it.artStatus) { alert("Informe a situação da sua arte."); return false; }
       }
       return true;
     }
 
-    // GESTÃO MULTI-ITEM
+    // MULTI-ITEM
     function addNewItem() {
       state.items.push(createItem(state.items.length + 1));
       state.currIdx = state.items.length - 1;
       loadItemForm(state.currIdx);
-      goToStep(2);
+      goToStep(1);
     }
 
-    function renderStep8() {
+    function renderStep5Review() {
       document.getElementById('configured-items-list').innerHTML = state.items.map((it, idx) => {
         let tot = 0;
         const sz = [];
         Object.entries(it.sizes).forEach(([k, v]) => { if (v > 0) { tot += v; sz.push(`${k}: ${v}`); } });
+        
+        // Formatação das Mangas
+        const mangasDesc = [];
+        if (it.hasMangaCurta) mangasDesc.push(`Curta (${it.qtdMangaCurta || 'todas'})`);
+        if (it.hasMangaLonga) mangasDesc.push(`Longa (${it.qtdMangaLonga || 'todas'})`);
+
         return `
-          <div class="p-4 bg-brand-ice/60 border border-blue-200 rounded-3xl flex justify-between items-center text-xs">
+          <div class="p-3.5 bg-brand-ice/60 border border-blue-200 rounded-2xl flex justify-between items-center text-xs">
             <div>
               <span class="font-black text-brand-navy">${it.title}: ${it.model} ${it.hasTapaBumbum ? '(c/ tapa-bumbum)' : ''}</span>
-              <p class="text-slate-500 font-medium mt-0.5">${it.fabric} • Gola ${it.collar} • ${it.color} • <strong>${tot} peças</strong></p>
-              <p class="text-brand-electric font-bold text-[11px] mt-0.5">Estampa: ${it.locations.join(', ')} (${it.colorsCount})</p>
-              <p class="text-[10px] text-slate-400 font-bold mt-1">${sz.join(' | ')}</p>
+              <p class="text-slate-500 font-medium mt-0.5">${it.fabric} • ${it.collar} • ${it.color} • <strong>${tot} peças</strong></p>
+              <p class="text-brand-electric font-bold text-[11px]">Mangas: ${mangasDesc.join(' + ')} | Estampa: ${it.locations.join(' + ')}</p>
+              <p class="text-[10px] text-slate-400 font-bold mt-0.5">${sz.join(' | ')}</p>
             </div>
-            <div class="flex gap-2">
-              <button type="button" onclick="editItem(${idx})" class="px-3 py-2 border border-slate-200 rounded-xl bg-white font-black text-slate-700">Editar</button>
-              ${state.items.length > 1 ? `<button type="button" onclick="removeItem(${idx})" class="px-3 py-2 border border-rose-200 rounded-xl bg-white text-rose-600 font-black">Excluir</button>` : ''}
+            <div class="flex gap-1.5">
+              <button type="button" onclick="editItem(${idx})" class="px-2.5 py-1.5 border border-slate-200 rounded-xl bg-white font-black text-slate-700">Editar</button>
+              ${state.items.length > 1 ? `<button type="button" onclick="removeItem(${idx})" class="px-2.5 py-1.5 border border-rose-200 rounded-xl bg-white text-rose-600 font-black">Excluir</button>` : ''}
             </div>
           </div>
         `;
@@ -874,14 +988,14 @@
     function editItem(idx) {
       state.currIdx = idx;
       loadItemForm(idx);
-      goToStep(2);
+      goToStep(1);
     }
 
     function removeItem(idx) {
       if (confirm(`Remover ${state.items[idx].title}?`)) {
         state.items.splice(idx, 1);
         state.currIdx = Math.max(0, state.items.length - 1);
-        renderStep8();
+        renderStep5Review();
         calcTotals();
       }
     }
@@ -893,14 +1007,20 @@
       setTapaBumbum(it.hasTapaBumbum);
       markActive('.fabric-btn', it.fabric);
       markActive('.collar-btn', it.collar);
-      setSleeve(it.sleeve);
+
+      document.getElementById('chk-manga-curta').checked = it.hasMangaCurta;
+      document.getElementById('inp-qtd-manga-curta').value = it.qtdMangaCurta || '';
+      document.getElementById('chk-manga-longa').checked = it.hasMangaLonga;
+      document.getElementById('inp-qtd-manga-longa').value = it.qtdMangaLonga || '';
+      toggleMangaOption('curta');
+      toggleMangaOption('longa');
+
       document.getElementById('inp-color').value = it.color || '';
       document.getElementById('inp-obs').value = it.obs || '';
       updateLocationsUI();
       markActive('.color-btn', it.colorsCount);
       document.getElementById('inp-print-desc').value = it.printDesc || '';
       markActive('.art-btn', it.artStatus);
-      document.getElementById('inp-art-notes').value = it.artNotes || '';
 
       [...CONFIG.cSizes, ...CONFIG.aSizes].forEach(s => {
         document.getElementById(`sz-${clean(s)}`).value = it.sizes[s] || 0;
@@ -908,38 +1028,14 @@
       calcTotals();
     }
 
-    // REVISÃO FINAL
-    function renderStep10() {
-      saveInputs();
-      document.getElementById('rev-client').innerHTML = `
-        <strong>${state.customer.name}</strong> • ${state.customer.phone}<br/>
-        ${state.customer.city} • Pedido: <strong>${state.customer.projName}</strong> (${state.customer.purpose})
-        ${state.customer.date ? `<br/>Entrega desejada: ${state.customer.date.split('-').reverse().join('/')}` : ''}
-      `;
-
-      let grand = 0;
-      document.getElementById('rev-items').innerHTML = state.items.map((it, i) => {
-        let tot = 0;
-        const sz = [];
-        Object.entries(it.sizes).forEach(([k, v]) => { if (v > 0) { tot += v; grand += v; sz.push(`${k}: ${v}`); } });
-        return `
-          <div class="p-3.5 bg-white border border-blue-100 rounded-2xl space-y-1">
-            <div class="flex justify-between font-black text-brand-navy">
-              <span>${it.title}: ${it.model} ${it.hasTapaBumbum ? '(c/ tapa-bumbum)' : ''}</span>
-              <span class="text-brand-electric font-black">${tot} peças</span>
-            </div>
-            <p class="text-slate-500 font-medium text-[11px]">${it.fabric} • Gola ${it.collar} • ${it.sleeve} • Cor: ${it.color}</p>
-            <p class="text-brand-electric font-bold text-[11px]">Estampa: ${it.locations.join(' + ')} (${it.colorsCount})</p>
-            ${it.printDesc ? `<p class="text-slate-500 text-[10px]">Detalhes: ${it.printDesc}</p>` : ''}
-            <p class="text-slate-700 font-extrabold text-[10px] pt-0.5">Tamanhos: ${sz.join(' | ')}</p>
-          </div>
-        `;
-      }).join('');
-    }
-
     // ENVIO PARA O WHATSAPP COM NÚMERO OFICIAL DE NOVA FRIBURGO
     function sendToWhatsApp() {
       saveInputs();
+
+      if (!state.customer.name || !state.customer.phone || !state.customer.city) {
+        alert("Preencha seu Nome, WhatsApp e Cidade para enviar o pedido.");
+        return;
+      }
 
       let grand = 0;
       state.items.forEach(it => Object.values(it.sizes).forEach(q => grand += q));
@@ -953,8 +1049,12 @@
       msg += `• *WhatsApp:* ${state.customer.phone}\n`;
       msg += `• *Cidade/Bairro:* ${state.customer.city}\n`;
       msg += `• *Projeto:* ${state.customer.projName} (${state.customer.purpose})\n`;
-      if (state.customer.date) msg += `• *Data desejada:* ${state.customer.date.split('-').reverse().join('/')}\n`;
-      if (state.customer.projDesc) msg += `• *Descrição:* ${state.customer.projDesc}\n`;
+      if (state.customer.date) {
+        msg += `• *Data desejada:* ${state.customer.date.split('-').reverse().join('/')} (Min. 25 dias úteis)\n`;
+      }
+      if (state.customer.notes) {
+        msg += `• *Observações/Urgência:* ${state.customer.notes}\n`;
+      }
 
       msg += `\n*ITENS DO PEDIDO (${state.items.length} modelo(s))*\n`;
       msg += `-------------------------------------------\n`;
@@ -964,24 +1064,27 @@
         const sz = [];
         Object.entries(it.sizes).forEach(([k, v]) => { if (v > 0) { tot += v; sz.push(`${k}: ${v}`); } });
 
+        const mangasDesc = [];
+        if (it.hasMangaCurta) mangasDesc.push(`Manga Curta (${it.qtdMangaCurta || 'total'} peças)`);
+        if (it.hasMangaLonga) mangasDesc.push(`Manga Longa (${it.qtdMangaLonga || 'total'} peças)`);
+
         msg += `\n*${i + 1}. ${it.title.toUpperCase()}*\n`;
         msg += `• *Modelo:* ${it.model}${it.hasTapaBumbum ? ' (Com tapa-bumbum)' : ''}\n`;
         msg += `• *Tecido:* ${it.fabric}\n`;
-        msg += `• *Gola:* ${it.collar} | *Manga:* ${it.sleeve}\n`;
+        msg += `• *Gola:* ${it.collar}\n`;
+        msg += `• *Mangas:* ${mangasDesc.join(' + ')}\n`;
         msg += `• *Cor:* ${it.color}\n`;
-        msg += `• *Estampa:* ${it.locations.join(' + ')}\n`;
-        msg += `• *Cores da estampa:* ${it.colorsCount}\n`;
-        if (it.printDesc) msg += `• *Detalhes da arte:* ${it.printDesc}\n`;
-        msg += `• *Situação da arte:* ${it.artStatus}\n`;
-        if (it.artNotes) msg += `• *Obs. da arte:* ${it.artNotes}\n`;
+        msg += `• *Locais da Estampa:* ${it.locations.join(' + ')}\n`;
+        msg += `• *Cores da Estampa:* ${it.colorsCount}\n`;
+        if (it.printDesc) msg += `• *Detalhes da Arte:* ${it.printDesc}\n`;
+        msg += `• *Situação da Arte:* ${it.artStatus}\n`;
         msg += `• *Grade de Tamanhos:* ${sz.join(' | ')}\n`;
         msg += `• *Subtotal:* ${tot} peças\n`;
       });
 
       msg += `\n-------------------------------------------\n`;
       msg += `*TOTAL GERAL:* ${grand} peças\n`;
-      if (state.customer.notes) msg += `*Observações Gerais:* ${state.customer.notes}\n`;
-      msg += `\n_Mensagem gerada pelo site Manancial Styllo. Aguardo orçamento com valores e prazos._`;
+      msg += `\n_Mensagem gerada pelo site Manancial Styllo. Aguardo retorno com valores e prazos._`;
 
       window.open(`https://wa.me/${CONFIG.phone}?text=${encodeURIComponent(msg)}`, '_blank');
     }
