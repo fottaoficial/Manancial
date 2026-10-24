@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Manancial Styllo | Camisas Personalizadas • Nova Friburgo</title>
   
-  <!-- Fonte Redonda, Moderna e Marcante -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
@@ -21,10 +20,10 @@
               navy: '#071B46',
               electric: '#1264D8',
               ice: '#EEF4FF',
-              mint: '#E7F8F2',
-              peach: '#FFF3E8',
-              lavender: '#F3EBF9',
-              slate: '#64748B'
+              pastelMint: '#E6F8F0',
+              pastelPeach: '#FFF1E5',
+              pastelPurple: '#F3E8FF',
+              pastelYellow: '#FEF9C3'
             }
           }
         }
@@ -35,55 +34,72 @@
     html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
     input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
     input[type=number] { -moz-appearance: textfield; }
-    .btn-choice.active {
+    .btn-card.active {
       border-color: #1264D8 !important;
       background-color: #EEF4FF !important;
       color: #1264D8 !important;
       font-weight: 800 !important;
       box-shadow: 0 4px 14px rgba(18, 100, 216, 0.12);
     }
+    .check-box.active {
+      border-color: #1264D8 !important;
+      background-color: #1264D8 !important;
+      color: #ffffff !important;
+    }
   </style>
 </head>
 <body class="bg-[#F8FAFC] text-slate-800 antialiased min-h-screen flex flex-col font-sans">
 
   <!-- CABEÇALHO -->
-  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-100 py-3.5 px-4">
-    <div class="max-w-4xl mx-auto flex items-center justify-between">
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-100 py-4 px-4 shadow-sm">
+    <div class="max-w-4xl mx-auto flex items-center justify-between gap-3">
       
-      <!-- Logo Minimalista Redesenhado -->
-      <a href="#inicio" class="flex items-center gap-2.5">
-        <div class="w-10 h-10 rounded-2xl bg-brand-navy flex items-center justify-center text-white shadow-md shadow-brand-navy/15">
-          <svg class="w-6 h-6 text-cyan-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 14c2.5-3 5-3 7.5 0s5 3 8.5 0"></path>
-            <path d="M4 9c2.5-3 5-3 7.5 0s5 3 8.5 0"></path>
+      <!-- LOGO OFICIAL MANANCIAL STYLLO RECRIADO (SVG METÁLICO) -->
+      <a href="#inicio" class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#061433] via-[#0b245c] to-[#040d21] p-1 shadow-md border border-slate-700/50 flex items-center justify-center relative overflow-hidden flex-shrink-0">
+          <!-- Brilho metálico sutil -->
+          <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-cyan-400/20 to-transparent"></div>
+          <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow">
+            <defs>
+              <linearGradient id="metalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ffffff" />
+                <stop offset="35%" stop-color="#93c5fd" />
+                <stop offset="65%" stop-color="#2563eb" />
+                <stop offset="100%" stop-color="#dbeafe" />
+              </linearGradient>
+            </defs>
+            <!-- Monograma MS com curvas de estilo e água/manancial -->
+            <path d="M22 74V28L42 54L62 28V74" fill="none" stroke="url(#metalGrad)" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M48 66C54 62 68 62 74 68C78 72 74 78 66 78C56 78 54 84 64 86C74 88 80 82 82 78" fill="none" stroke="url(#metalGrad)" stroke-width="5" stroke-linecap="round"/>
           </svg>
         </div>
         <div>
-          <span class="block text-base font-black tracking-tight leading-none text-brand-navy">
+          <span class="block text-base sm:text-lg font-black tracking-tight leading-none text-brand-navy">
             MANANCIAL <span class="text-brand-electric font-black">STYLLO</span>
           </span>
-          <span class="block text-[11px] font-bold text-slate-400 uppercase tracking-widest mt-0.5">
-            Nova Friburgo • RJ
+          <span class="block text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-wider mt-1">
+            Camisas Personalizadas • Nova Friburgo
           </span>
         </div>
       </a>
 
-      <!-- Botão Superior Direto -->
-      <button onclick="scrollToConfig()" class="bg-brand-electric hover:bg-blue-600 active:scale-95 text-white font-extrabold text-xs px-4 py-2.5 rounded-full shadow-md shadow-blue-600/20 transition-all">
-        Fazer Orçamento
+      <!-- Botão Rápido -->
+      <button onclick="scrollToConfig()" class="bg-brand-electric hover:bg-blue-600 active:scale-95 text-white font-extrabold text-xs sm:text-sm px-4 sm:px-5 py-2.5 rounded-2xl shadow-md shadow-blue-600/20 transition-all flex items-center gap-1.5 whitespace-nowrap">
+        <span>Fazer Pedido</span>
+        <span>→</span>
       </button>
     </div>
   </header>
 
   <main class="flex-grow">
     
-    <!-- HERO DIRETO E VISUAL -->
-    <section id="inicio" class="pt-10 pb-8 px-4 text-center">
-      <div class="max-w-2xl mx-auto space-y-4">
+    <!-- HERO COM CORES PASTÉIS E TIPOGRAFIA REDONDA -->
+    <section id="inicio" class="pt-12 pb-10 px-4 text-center">
+      <div class="max-w-2xl mx-auto space-y-5">
         
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-ice text-brand-electric text-xs font-extrabold">
-          <span class="w-2 h-2 rounded-full bg-brand-electric animate-pulse"></span>
-          Camisas Personalizadas em Nova Friburgo
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-mint border border-emerald-200 text-emerald-800 text-xs font-black">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          Atendimento Direto em Nova Friburgo & Região
         </div>
 
         <h1 class="text-3xl sm:text-5xl font-black text-brand-navy tracking-tight leading-tight">
@@ -91,317 +107,339 @@
           <span class="text-brand-electric">nossa personalização.</span>
         </h1>
 
-        <p class="text-sm sm:text-base text-slate-500 font-medium max-w-md mx-auto leading-relaxed">
-          Camisas para empresas, uniformes, igrejas e eventos. Monte os itens do seu jeito e receba os valores direto no WhatsApp.
+        <p class="text-sm sm:text-base text-slate-500 font-medium max-w-lg mx-auto leading-relaxed">
+          Camisas sob medida para sua empresa, igreja, evento ou equipe. Monte seu pedido de um jeito simples e receba o orçamento detalhado no WhatsApp.
         </p>
 
         <div class="pt-2">
-          <button onclick="scrollToConfig()" class="w-full sm:w-auto bg-brand-navy hover:bg-slate-900 active:scale-95 text-white font-extrabold text-base px-8 py-4 rounded-2xl shadow-xl shadow-brand-navy/15 transition-all">
+          <button onclick="scrollToConfig()" class="w-full sm:w-auto bg-brand-navy hover:bg-slate-900 active:scale-95 text-white font-extrabold text-base px-9 py-4 rounded-2xl shadow-xl shadow-brand-navy/15 transition-all">
             Montar Meu Pedido Agora →
           </button>
         </div>
 
-        <!-- Tags Pastéis -->
-        <div class="pt-4 flex flex-wrap justify-center gap-2">
-          <span class="px-3.5 py-1.5 rounded-xl bg-brand-ice text-brand-navy text-xs font-bold">🏢 Empresas</span>
-          <span class="px-3.5 py-1.5 rounded-xl bg-brand-mint text-emerald-800 text-xs font-bold">⛪ Igrejas & Congressos</span>
-          <span class="px-3.5 py-1.5 rounded-xl bg-brand-peach text-amber-900 text-xs font-bold">🎉 Eventos & Turmas</span>
-          <span class="px-3.5 py-1.5 rounded-xl bg-brand-lavender text-purple-900 text-xs font-bold">⚡ Dry Fit & Esportes</span>
+        <!-- Tags Pastéis Bem Coloridas -->
+        <div class="pt-4 flex flex-wrap justify-center gap-2.5">
+          <span class="px-3.5 py-1.5 rounded-2xl bg-brand-ice border border-blue-100 text-brand-navy text-xs font-bold">🏢 Empresas & Uniformes</span>
+          <span class="px-3.5 py-1.5 rounded-2xl bg-brand-pastelMint border border-emerald-100 text-emerald-800 text-xs font-bold">⛪ Igrejas & Congressos</span>
+          <span class="px-3.5 py-1.5 rounded-2xl bg-brand-pastelPeach border border-orange-100 text-amber-900 text-xs font-bold">🎉 Eventos & Turmas</span>
+          <span class="px-3.5 py-1.5 rounded-2xl bg-brand-pastelPurple border border-purple-100 text-purple-900 text-xs font-bold">⚡ Dry Fit Esportivo</span>
         </div>
 
       </div>
     </section>
 
-    <!-- CARDS RÁPIDOS (COMO FUNCIONA) -->
-    <section class="py-4 px-4 max-w-3xl mx-auto">
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-        <div class="bg-white p-4 rounded-2xl border border-slate-100 flex items-center gap-3">
-          <span class="w-9 h-9 rounded-xl bg-brand-ice text-brand-electric font-black flex items-center justify-center text-sm flex-shrink-0">1</span>
+    <!-- CARDS DE INSPIRAÇÃO E BENEFÍCIOS -->
+    <section class="py-6 px-4 max-w-3xl mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+        <div class="bg-brand-ice/80 p-5 rounded-3xl border border-blue-100 flex items-start gap-3.5">
+          <span class="w-10 h-10 rounded-2xl bg-white text-brand-electric font-black flex items-center justify-center text-sm shadow-sm flex-shrink-0">1</span>
           <div>
-            <h2 class="font-extrabold text-xs text-brand-navy">Monte os Itens</h2>
-            <p class="text-[11px] text-slate-400 font-medium">Tecido, modelo e tamanhos.</p>
+            <h2 class="font-black text-sm text-brand-navy">Escolha as Peças</h2>
+            <p class="text-xs text-slate-500 font-medium mt-0.5">Defina modelos, tecidos e quantidades por tamanho.</p>
           </div>
         </div>
-        <div class="bg-white p-4 rounded-2xl border border-slate-100 flex items-center gap-3">
-          <span class="w-9 h-9 rounded-xl bg-brand-ice text-brand-electric font-black flex items-center justify-center text-sm flex-shrink-0">2</span>
+
+        <div class="bg-brand-pastelMint/80 p-5 rounded-3xl border border-emerald-100 flex items-start gap-3.5">
+          <span class="w-10 h-10 rounded-2xl bg-white text-emerald-600 font-black flex items-center justify-center text-sm shadow-sm flex-shrink-0">2</span>
           <div>
-            <h2 class="font-extrabold text-xs text-brand-navy">Envie no WhatsApp</h2>
-            <p class="text-[11px] text-slate-400 font-medium">Resumo pronto e organizado.</p>
+            <h2 class="font-black text-sm text-emerald-950">Diga como quer a estampa</h2>
+            <p class="text-xs text-emerald-800/80 font-medium mt-0.5">Frente, costas, manga e cores de forma descomplicada.</p>
           </div>
         </div>
-        <div class="bg-white p-4 rounded-2xl border border-slate-100 flex items-center gap-3">
-          <span class="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-600 font-black flex items-center justify-center text-sm flex-shrink-0">3</span>
+
+        <div class="bg-brand-pastelPurple/80 p-5 rounded-3xl border border-purple-100 flex items-start gap-3.5">
+          <span class="w-10 h-10 rounded-2xl bg-white text-purple-600 font-black flex items-center justify-center text-sm shadow-sm flex-shrink-0">3</span>
           <div>
-            <h2 class="font-extrabold text-xs text-brand-navy">Receba os Valores</h2>
-            <p class="text-[11px] text-slate-400 font-medium">Orçamento rápido pela equipe.</p>
+            <h2 class="font-black text-sm text-purple-950">Receba o Orçamento</h2>
+            <p class="text-xs text-purple-800/80 font-medium mt-0.5">Nossa equipe passa valores e prazos no WhatsApp.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- CONFIGURADOR INTERATIVO MULTI-ITEM -->
-    <section id="configurador" class="py-8 px-4 max-w-xl mx-auto">
+    <section id="configurador" class="py-10 px-4 max-w-xl mx-auto">
       
-      <!-- Progresso -->
-      <div class="bg-white rounded-3xl p-4 mb-4 border border-slate-100 shadow-sm">
-        <div class="flex justify-between items-center text-xs font-black text-brand-navy mb-2">
-          <span id="txt-step-name">1. Finalidade</span>
-          <span id="txt-step-count" class="bg-brand-ice text-brand-electric px-3 py-1 rounded-full text-[11px] font-extrabold">Etapa 1 de 10</span>
+      <!-- Progresso com Cores Vivas -->
+      <div class="bg-white rounded-3xl p-5 mb-5 border border-slate-100 shadow-sm space-y-2.5">
+        <div class="flex justify-between items-center text-xs font-black text-brand-navy">
+          <span id="txt-step-name" class="text-sm">1. Finalidade</span>
+          <span id="txt-step-count" class="bg-brand-ice text-brand-electric px-3 py-1 rounded-full text-xs font-black">Etapa 1 de 10</span>
         </div>
-        <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-          <div id="bar-fill" class="bg-brand-electric h-full rounded-full transition-all w-[10%]"></div>
+        <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
+          <div id="bar-fill" class="bg-brand-electric h-full rounded-full transition-all duration-300 w-[10%]"></div>
         </div>
-        <div class="mt-2.5 flex justify-between items-center text-[11px] font-bold text-slate-400">
-          <span id="txt-item-badge" class="text-brand-navy">Configurando: Camisa 1</span>
-          <span id="txt-total-counter" class="text-brand-electric font-black">0 peças no total</span>
+        <div class="flex justify-between items-center text-xs font-bold text-slate-400 pt-1">
+          <span id="txt-item-badge" class="text-brand-navy font-black">Camisa 1</span>
+          <span id="txt-total-counter" class="text-brand-electric font-black bg-blue-50 px-2.5 py-0.5 rounded-lg">Total: 0 peças</span>
         </div>
       </div>
 
-      <!-- Card do Formulário -->
-      <div class="bg-white rounded-3xl border border-slate-100 shadow-xl p-5 sm:p-7">
+      <!-- Caixa Principal do Formulário -->
+      <div class="bg-white rounded-3xl border border-slate-100 shadow-xl p-6 sm:p-8">
         <form onsubmit="event.preventDefault();" id="quote-form">
 
           <!-- ETAPA 1: FINALIDADE -->
-          <div id="step-1" class="step-pane space-y-4">
+          <div id="step-1" class="step-pane space-y-5">
             <div>
-              <h2 class="text-lg font-black text-brand-navy">Qual é o objetivo do pedido?</h2>
-              <p class="text-xs text-slate-400 font-medium">Identifique seu projeto ou evento.</p>
+              <h2 class="text-xl font-black text-brand-navy">Qual é o objetivo do pedido?</h2>
+              <p class="text-xs text-slate-400 font-medium mt-1">Identifique seu grupo ou ocasião para começarmos.</p>
             </div>
             <div>
-              <label class="block text-xs font-bold text-slate-600 mb-1.5" for="inp-pname">Identificação do Pedido *</label>
-              <input type="text" id="inp-pname" placeholder="Ex: Uniforme Empresa, Retiro 2026..." 
+              <label class="block text-xs font-bold text-slate-700 mb-2" for="inp-pname">Nome do projeto, evento ou empresa *</label>
+              <input type="text" id="inp-pname" placeholder="Ex: Uniformes Loja Central, Retiro Jovens 2026..." 
                 class="w-full px-4 py-3.5 rounded-2xl border border-slate-200 text-sm font-bold outline-none focus:border-brand-electric focus:ring-2 focus:ring-blue-50" />
             </div>
             <div>
-              <label class="block text-xs font-bold text-slate-600 mb-1.5">Finalidade Principal *</label>
-              <div class="grid grid-cols-2 gap-2" id="grid-purposes"></div>
+              <label class="block text-xs font-bold text-slate-700 mb-2">Finalidade Principal *</label>
+              <div class="grid grid-cols-2 gap-2.5" id="grid-purposes"></div>
             </div>
             <div>
-              <label class="block text-xs font-bold text-slate-600 mb-1.5" for="inp-pdesc">Descrição ou ideia (opcional)</label>
-              <textarea id="inp-pdesc" rows="2" placeholder="Conte brevemente sobre as peças..." 
+              <label class="block text-xs font-bold text-slate-700 mb-2" for="inp-pdesc">Descrição breve (opcional)</label>
+              <textarea id="inp-pdesc" rows="2" placeholder="Conte mais sobre a ocasião ou detalhe que você gostaria..." 
                 class="w-full px-4 py-3 rounded-2xl border border-slate-200 text-xs font-medium outline-none focus:border-brand-electric"></textarea>
             </div>
           </div>
 
           <!-- ETAPA 2: MODELO -->
-          <div id="step-2" class="step-pane hidden space-y-4">
+          <div id="step-2" class="step-pane hidden space-y-5">
             <div>
-              <h2 class="text-lg font-black text-brand-navy">Escolha o modelo da peça</h2>
-              <p class="text-xs text-slate-400 font-medium">Selecione o corte ideal para este item.</p>
+              <h2 class="text-xl font-black text-brand-navy">Escolha o modelo da peça</h2>
+              <p class="text-xs text-slate-400 font-medium mt-1">Selecione o corte para este grupo de camisas.</p>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5" id="grid-models"></div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="grid-models"></div>
 
-            <div id="box-tapabumbum" class="hidden p-3.5 rounded-2xl bg-brand-ice border border-blue-200 space-y-2">
-              <span class="block text-xs font-bold text-brand-navy">Acabamento Baby Look:</span>
-              <div class="grid grid-cols-2 gap-2">
-                <button type="button" onclick="setTapaBumbum(false)" id="tb-sem" class="p-2.5 rounded-xl border text-xs font-bold bg-white">Sem tapa-bumbum</button>
-                <button type="button" onclick="setTapaBumbum(true)" id="tb-com" class="p-2.5 rounded-xl border text-xs font-bold bg-white">Com tapa-bumbum</button>
+            <div id="box-tapabumbum" class="hidden p-4 rounded-2xl bg-brand-ice border border-blue-200 space-y-3">
+              <span class="block text-xs font-extrabold text-brand-navy">Acabamento da Baby Look:</span>
+              <div class="grid grid-cols-2 gap-2.5">
+                <button type="button" onclick="setTapaBumbum(false)" id="tb-sem" class="p-3 rounded-2xl border text-xs font-bold bg-white">Sem tapa-bumbum (Normal)</button>
+                <button type="button" onclick="setTapaBumbum(true)" id="tb-com" class="p-3 rounded-2xl border text-xs font-bold bg-white">Com tapa-bumbum (Alongada)</button>
               </div>
             </div>
           </div>
 
-          <!-- ETAPA 3: TECIDO -->
-          <div id="step-3" class="step-pane hidden space-y-4">
+          <!-- ETAPA 3: TECIDO (LINGUAGEM PARA LEIGOS) -->
+          <div id="step-3" class="step-pane hidden space-y-5">
             <div>
-              <h2 class="text-lg font-black text-brand-navy">Qual o tecido desejado?</h2>
-              <p class="text-xs text-slate-400 font-medium">Se não souber, pode pedir orientação.</p>
+              <h2 class="text-xl font-black text-brand-navy">Qual tecido você prefere?</h2>
+              <p class="text-xs text-slate-400 font-medium mt-1">Explicamos de forma simples cada opção abaixo:</p>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5" id="grid-fabrics"></div>
+            <div class="grid grid-cols-1 gap-2.5" id="grid-fabrics"></div>
           </div>
 
           <!-- ETAPA 4: QUANTIDADES E TAMANHOS -->
-          <div id="step-4" class="step-pane hidden space-y-4">
+          <div id="step-4" class="step-pane hidden space-y-5">
             <div>
-              <h2 class="text-lg font-black text-brand-navy">Quantidades por tamanho</h2>
-              <p class="text-xs text-slate-400 font-medium">Use os botões + e - ou digite os números.</p>
+              <h2 class="text-xl font-black text-brand-navy">Quantidades por tamanho</h2>
+              <p class="text-xs text-slate-400 font-medium mt-1">Clique em + ou - ou digite os números diretamente.</p>
             </div>
 
-            <div class="p-3.5 bg-brand-ice/50 rounded-2xl border border-blue-100">
-              <div class="flex justify-between items-center text-xs font-black text-brand-navy mb-2.5">
-                <span>Infantil</span>
-                <span id="child-sum" class="text-brand-electric">0 peças</span>
+            <!-- Grade Infantil -->
+            <div class="p-4 bg-brand-ice/60 rounded-3xl border border-blue-100">
+              <div class="flex justify-between items-center text-xs font-black text-brand-navy mb-3">
+                <span>Tamanhos Infantis</span>
+                <span id="child-sum" class="text-brand-electric font-black bg-white px-3 py-1 rounded-full">0 peças</span>
               </div>
-              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2" id="grid-child-sizes"></div>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5" id="grid-child-sizes"></div>
             </div>
 
-            <div class="p-3.5 bg-brand-ice/50 rounded-2xl border border-blue-100">
-              <div class="flex justify-between items-center text-xs font-black text-brand-navy mb-2.5">
-                <span>Adulto</span>
-                <span id="adult-sum" class="text-brand-electric">0 peças</span>
+            <!-- Grade Adulto -->
+            <div class="p-4 bg-brand-pastelMint/60 rounded-3xl border border-emerald-100">
+              <div class="flex justify-between items-center text-xs font-black text-emerald-950 mb-3">
+                <span>Tamanhos Adultos</span>
+                <span id="adult-sum" class="text-emerald-700 font-black bg-white px-3 py-1 rounded-full">0 peças</span>
               </div>
-              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2" id="grid-adult-sizes"></div>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5" id="grid-adult-sizes"></div>
             </div>
 
-            <div class="p-3 bg-blue-50 border border-blue-200 rounded-2xl flex justify-between items-center font-bold text-xs text-brand-navy">
+            <div class="p-4 bg-blue-50 border border-blue-200 rounded-2xl flex justify-between items-center font-bold text-xs text-brand-navy">
               <span>Total deste modelo:</span>
-              <span id="item-sum" class="text-brand-electric text-base font-black">0 peças</span>
+              <span id="item-sum" class="text-brand-electric text-lg font-black">0 peças</span>
             </div>
           </div>
 
-          <!-- ETAPA 5: GOLA E CARACTERÍSTICAS -->
-          <div id="step-5" class="step-pane hidden space-y-4">
+          <!-- ETAPA 5: GOLA, MANGA E COR -->
+          <div id="step-5" class="step-pane hidden space-y-5">
             <div>
-              <h2 class="text-lg font-black text-brand-navy">Gola e características</h2>
-              <p class="text-xs text-slate-400 font-medium">Defina acabamento, manga e cor.</p>
+              <h2 class="text-xl font-black text-brand-navy">Gola, manga e cor</h2>
+              <p class="text-xs text-slate-400 font-medium mt-1">Como deve ser a costura e o tom da camisa?</p>
             </div>
             <div>
-              <label class="block text-xs font-bold text-slate-600 mb-1.5">Tipo de Gola *</label>
+              <label class="block text-xs font-bold text-slate-700 mb-2">Tipo de Gola *</label>
               <div class="grid grid-cols-2 sm:grid-cols-3 gap-2" id="grid-collars"></div>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
               <div>
-                <label class="block text-xs font-bold text-slate-600 mb-1.5">Comprimento da Manga *</label>
+                <label class="block text-xs font-bold text-slate-700 mb-2">Comprimento da Manga *</label>
                 <div class="grid grid-cols-2 gap-2">
-                  <button type="button" onclick="setSleeve('Manga curta')" id="slv-curta" class="p-3 rounded-2xl border text-xs font-bold bg-white">Manga curta</button>
-                  <button type="button" onclick="setSleeve('Manga longa')" id="slv-longa" class="p-3 rounded-2xl border text-xs font-bold bg-white">Manga longa</button>
+                  <button type="button" onclick="setSleeve('Manga curta')" id="slv-curta" class="p-3.5 rounded-2xl border text-xs font-bold bg-white">Manga curta</button>
+                  <button type="button" onclick="setSleeve('Manga longa')" id="slv-longa" class="p-3.5 rounded-2xl border text-xs font-bold bg-white">Manga longa</button>
                 </div>
               </div>
               <div>
-                <label class="block text-xs font-bold text-slate-600 mb-1.5" for="inp-color">Cor da Camisa *</label>
+                <label class="block text-xs font-bold text-slate-700 mb-2" for="inp-color">Cor da Camisa *</label>
                 <input type="text" id="inp-color" placeholder="Ex: Preto, Azul Marinho, Branco..." 
-                  class="w-full px-4 py-3 rounded-2xl border border-slate-200 text-sm font-bold outline-none focus:border-brand-electric" />
+                  class="w-full px-4 py-3.5 rounded-2xl border border-slate-200 text-sm font-bold outline-none focus:border-brand-electric" />
               </div>
             </div>
             <div>
-              <label class="block text-xs font-bold text-slate-600 mb-1.5" for="inp-obs">Observações do corte (opcional)</label>
-              <input type="text" id="inp-obs" placeholder="Algum detalhe de costura ou modelo..." 
+              <label class="block text-xs font-bold text-slate-700 mb-2" for="inp-obs">Observações do corte ou peça (opcional)</label>
+              <input type="text" id="inp-obs" placeholder="Ex: Detalhe de viés contrastante..." 
                 class="w-full px-4 py-3 rounded-2xl border border-slate-200 text-xs font-medium outline-none focus:border-brand-electric" />
             </div>
           </div>
 
-          <!-- ETAPA 6: TÉCNICA DE ESTAMPA -->
-          <div id="step-6" class="step-pane hidden space-y-4">
+          <!-- ETAPA 6: ONDE VAI A ESTAMPA (MÚLTIPLA ESCOLHA CLARA) -->
+          <div id="step-6" class="step-pane hidden space-y-5">
             <div>
-              <h2 class="text-lg font-black text-brand-navy">Técnica e estampa</h2>
-              <p class="text-xs text-slate-400 font-medium">Como quer personalizar essa peça?</p>
+              <h2 class="text-xl font-black text-brand-navy">Onde vai a personalização?</h2>
+              <p class="text-xs text-slate-400 font-medium mt-1">Toque nos locais onde deseja estampar (pode marcar mais de um):</p>
             </div>
-            <div>
-              <label class="block text-xs font-bold text-slate-600 mb-1.5">Técnica de preferência *</label>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2" id="grid-techniques"></div>
+
+            <!-- Botões Grandes de Múltipla Escolha -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="print-locations-container">
+              <!-- Renderizado via JS com checkbox visual -->
             </div>
-            <div>
-              <label class="block text-xs font-bold text-slate-600 mb-1.5">Locais da personalização:</label>
-              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2" id="grid-locations"></div>
+
+            <!-- Resumo da Seleção de Locais -->
+            <div class="p-3.5 bg-brand-ice rounded-2xl border border-blue-200 text-xs text-brand-navy font-bold flex items-center justify-between">
+              <span>Locais escolhidos:</span>
+              <span id="txt-selected-locations" class="text-brand-electric font-black">Nenhum marcado ainda</span>
             </div>
+
+            <!-- Quantas Cores tem a Arte? (Linguagem para leigos) -->
+            <div class="pt-2">
+              <label class="block text-xs font-bold text-slate-700 mb-2">Quantas cores tem a sua estampa? *</label>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2" id="grid-colors-count">
+                <!-- Renderizado via JS -->
+              </div>
+            </div>
+
             <div>
-              <label class="block text-xs font-bold text-slate-600 mb-1.5" for="inp-print-desc">Detalhes da arte / cores aproximadas</label>
-              <input type="text" id="inp-print-desc" placeholder="Ex: Logo na frente e frase nas costas..." 
-                class="w-full px-4 py-3 rounded-2xl border border-slate-200 text-xs font-medium outline-none focus:border-brand-electric" />
+              <label class="block text-xs font-bold text-slate-700 mb-2" for="inp-print-desc">O que vai escrito ou desenhado? (opcional)</label>
+              <input type="text" id="inp-print-desc" placeholder="Ex: Logo da empresa na frente e frase bíblica nas costas..." 
+                class="w-full px-4 py-3.5 rounded-2xl border border-slate-200 text-xs font-medium outline-none focus:border-brand-electric" />
             </div>
           </div>
 
-          <!-- ETAPA 7: ARTE -->
-          <div id="step-7" class="step-pane hidden space-y-4">
+          <!-- ETAPA 7: SITUAÇÃO DA ARTE (SEM ANEXO DUPLICADO) -->
+          <div id="step-7" class="step-pane hidden space-y-5">
             <div>
-              <h2 class="text-lg font-black text-brand-navy">Situação da sua arte</h2>
-              <p class="text-xs text-slate-400 font-medium">Você já tem o arquivo pronto?</p>
+              <h2 class="text-xl font-black text-brand-navy">Situação da arte da estampa</h2>
+              <p class="text-xs text-slate-400 font-medium mt-1">Você já tem o desenho ou precisa de ajuda para criar?</p>
             </div>
-            <div class="space-y-2" id="grid-art"></div>
-            <div class="p-3.5 rounded-2xl bg-brand-ice border border-blue-200 text-xs space-y-1.5">
-              <span class="font-extrabold text-brand-navy block">📎 Envio de fotos e referências:</span>
-              <p class="text-slate-500 text-[11px] leading-relaxed">
-                As fotos, vetores e arquivos de arte devem ser <strong>enviados diretamente na conversa do WhatsApp</strong> que será aberta ao final.
+            
+            <div class="space-y-3" id="grid-art"></div>
+
+            <!-- Aviso Claro sobre Envio Direto no WhatsApp -->
+            <div class="p-4 rounded-3xl bg-brand-pastelPeach border border-orange-200 text-xs space-y-2">
+              <span class="font-black text-amber-950 flex items-center gap-2">
+                <span class="text-base">📲</span> Como enviar seu logotipo ou imagens:
+              </span>
+              <p class="text-amber-900/90 leading-relaxed font-medium text-[11px]">
+                Para maior qualidade e facilidade, <strong>não precisa anexar nada aqui no site</strong>. Ao clicar em enviar, a conversa do WhatsApp abrirá automaticamente e você poderá enviar suas fotos, referências e logos diretamente por lá!
               </p>
-              <input type="file" id="inp-file" accept="image/*,.pdf" onchange="handleFileSelect(event)" class="text-xs w-full text-slate-500 pt-1" />
-              <div id="txt-file-ref" class="text-[11px] text-emerald-700 font-bold hidden"></div>
             </div>
+
             <div>
-              <label class="block text-xs font-bold text-slate-600 mb-1.5" for="inp-art-notes">Observações sobre a arte (opcional)</label>
-              <textarea id="inp-art-notes" rows="2" placeholder="Fontes, detalhes ou referências..." 
+              <label class="block text-xs font-bold text-slate-700 mb-2" for="inp-art-notes">Observações sobre a arte (opcional)</label>
+              <textarea id="inp-art-notes" rows="2" placeholder="Cores de preferência, fontes ou frases exatas..." 
                 class="w-full px-4 py-3 rounded-2xl border border-slate-200 text-xs font-medium outline-none focus:border-brand-electric"></textarea>
             </div>
           </div>
 
-          <!-- ETAPA 8: MULTI-ITEM -->
-          <div id="step-8" class="step-pane hidden space-y-4">
+          <!-- ETAPA 8: RESUMO MULTI-ITEM -->
+          <div id="step-8" class="step-pane hidden space-y-5">
             <div>
-              <h2 class="text-lg font-black text-brand-navy">Itens do seu pedido</h2>
-              <p class="text-xs text-slate-400 font-medium">Você pode incluir modelos diferentes no mesmo orçamento.</p>
+              <h2 class="text-xl font-black text-brand-navy">Camisas do seu pedido</h2>
+              <p class="text-xs text-slate-400 font-medium mt-1">Você pode adicionar outro modelo com quantidades diferentes.</p>
             </div>
-            <div id="configured-items-list" class="space-y-2.5"></div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
-              <button type="button" onclick="addNewItem()" class="p-3.5 rounded-2xl border-2 border-dashed border-brand-electric text-brand-electric font-extrabold text-xs hover:bg-brand-ice active:scale-95 transition-all">
+
+            <div id="configured-items-list" class="space-y-3"></div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+              <button type="button" onclick="addNewItem()" class="p-4 rounded-2xl border-2 border-dashed border-brand-electric text-brand-electric font-black text-xs hover:bg-brand-ice active:scale-95 transition-all">
                 + Adicionar Outro Modelo
               </button>
-              <button type="button" onclick="goToStep(9)" class="p-3.5 rounded-2xl bg-brand-electric text-white font-extrabold text-xs hover:bg-blue-600 active:scale-95 transition-all">
-                Continuar para Dados →
+              <button type="button" onclick="goToStep(9)" class="p-4 rounded-2xl bg-brand-electric text-white font-black text-xs hover:bg-blue-600 active:scale-95 transition-all shadow-md">
+                Continuar para Meus Dados →
               </button>
             </div>
           </div>
 
           <!-- ETAPA 9: SEUS DADOS -->
-          <div id="step-9" class="step-pane hidden space-y-4">
+          <div id="step-9" class="step-pane hidden space-y-5">
             <div>
-              <h2 class="text-lg font-black text-brand-navy">Seus dados de contato</h2>
-              <p class="text-xs text-slate-400 font-medium">Para formalizarmos o orçamento no WhatsApp.</p>
+              <h2 class="text-xl font-black text-brand-navy">Seus dados para contato</h2>
+              <p class="text-xs text-slate-400 font-medium mt-1">Apenas o essencial para prepararmos seu orçamento.</p>
             </div>
             <div>
-              <label class="block text-xs font-bold text-slate-600 mb-1.5" for="inp-cname">Seu Nome Completo *</label>
-              <input type="text" id="inp-cname" placeholder="Ex: Amanda Silva" 
+              <label class="block text-xs font-bold text-slate-700 mb-2" for="inp-cname">Seu Nome Completo *</label>
+              <input type="text" id="inp-cname" placeholder="Ex: Mariana Silva" 
                 class="w-full px-4 py-3.5 rounded-2xl border border-slate-200 text-sm font-bold outline-none focus:border-brand-electric" />
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
-                <label class="block text-xs font-bold text-slate-600 mb-1.5" for="inp-cphone">Seu WhatsApp com DDD *</label>
+                <label class="block text-xs font-bold text-slate-700 mb-2" for="inp-cphone">Seu WhatsApp com DDD *</label>
                 <input type="tel" id="inp-cphone" placeholder="Ex: (22) 99845-1339" 
                   class="w-full px-4 py-3.5 rounded-2xl border border-slate-200 text-sm font-bold outline-none focus:border-brand-electric" />
               </div>
               <div>
-                <label class="block text-xs font-bold text-slate-600 mb-1.5" for="inp-ccity">Sua Cidade / Bairro *</label>
+                <label class="block text-xs font-bold text-slate-700 mb-2" for="inp-ccity">Cidade e Bairro *</label>
                 <input type="text" id="inp-ccity" placeholder="Ex: Nova Friburgo / Olaria" 
                   class="w-full px-4 py-3.5 rounded-2xl border border-slate-200 text-sm font-bold outline-none focus:border-brand-electric" />
               </div>
             </div>
             <div>
-              <label class="block text-xs font-bold text-slate-600 mb-1.5" for="inp-cdate">Data desejada para receber (opcional)</label>
+              <label class="block text-xs font-bold text-slate-700 mb-2" for="inp-cdate">Data desejada para receber (opcional)</label>
               <input type="date" id="inp-cdate" 
-                class="w-full px-4 py-3 rounded-2xl border border-slate-200 text-xs font-bold outline-none focus:border-brand-electric" />
+                class="w-full px-4 py-3 rounded-2xl border border-slate-200 text-xs font-bold outline-none focus:border-brand-electric text-slate-700" />
             </div>
             <div>
-              <label class="block text-xs font-bold text-slate-600 mb-1.5" for="inp-cnotes">Observações gerais (opcional)</label>
-              <textarea id="inp-cnotes" rows="2" placeholder="Observações de prazo ou entrega..." 
+              <label class="block text-xs font-bold text-slate-700 mb-2" for="inp-cnotes">Observações finais (opcional)</label>
+              <textarea id="inp-cnotes" rows="2" placeholder="Alguma dúvida ou urgência na entrega?" 
                 class="w-full px-4 py-3 rounded-2xl border border-slate-200 text-xs font-medium outline-none focus:border-brand-electric"></textarea>
             </div>
           </div>
 
           <!-- ETAPA 10: REVISÃO E WHATSAPP -->
-          <div id="step-10" class="step-pane hidden space-y-4">
+          <div id="step-10" class="step-pane hidden space-y-5">
             <div>
-              <h2 class="text-lg font-black text-brand-navy">Revisão do Pedido</h2>
-              <p class="text-xs text-slate-400 font-medium">Confira tudo antes de enviar.</p>
+              <h2 class="text-xl font-black text-brand-navy">Revisão do Pedido</h2>
+              <p class="text-xs text-slate-400 font-medium mt-1">Confira seu resumo antes de enviar para a Manancial Styllo.</p>
             </div>
 
-            <div class="p-4 bg-brand-ice/40 rounded-2xl border border-blue-100 text-xs space-y-3">
-              <div class="border-b border-blue-100 pb-2">
+            <div class="p-4 bg-brand-ice/60 rounded-3xl border border-blue-100 text-xs space-y-3">
+              <div class="border-b border-blue-100 pb-2.5">
                 <span class="font-black text-brand-navy block mb-1">👤 Solicitante</span>
-                <p id="rev-client" class="text-slate-600 font-medium"></p>
+                <p id="rev-client" class="text-slate-600 font-medium leading-relaxed"></p>
               </div>
               <div>
-                <span class="font-black text-brand-navy block mb-1.5">📦 Modelos Selecionados</span>
-                <div id="rev-items" class="space-y-2"></div>
+                <span class="font-black text-brand-navy block mb-2">📦 Camisas Configuradas</span>
+                <div id="rev-items" class="space-y-2.5"></div>
               </div>
             </div>
 
-            <!-- Aviso obrigatório conforme especificação -->
-            <div class="p-3.5 bg-amber-50 border border-amber-200 rounded-2xl text-amber-950 text-xs font-medium leading-relaxed">
+            <!-- Aviso obrigatório conforme diretriz -->
+            <div class="p-4 bg-brand-pastelYellow border border-amber-200 rounded-2xl text-amber-950 text-xs font-medium leading-relaxed">
               <strong>Importante:</strong> Este pedido é uma solicitação de orçamento. Valores, disponibilidade, detalhes técnicos e prazo de produção serão confirmados pela Manancial Styllo.
             </div>
 
-            <button type="button" onclick="sendToWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-black p-4 rounded-2xl shadow-lg shadow-emerald-700/20 transition-all text-sm flex items-center justify-center gap-2">
+            <button type="button" onclick="sendToWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-black p-4 rounded-2xl shadow-lg shadow-emerald-700/25 transition-all text-base flex items-center justify-center gap-2">
               <span>💬 Enviar Pedido pelo WhatsApp</span>
             </button>
 
-            <button type="button" onclick="goToStep(8)" class="w-full text-center text-xs font-extrabold text-slate-400 hover:text-brand-navy py-1">
-              ← Deseja adicionar ou alterar algum modelo?
+            <button type="button" onclick="goToStep(8)" class="w-full text-center text-xs font-black text-slate-400 hover:text-brand-navy py-1">
+              ← Deseja adicionar ou editar algum modelo?
             </button>
           </div>
 
           <!-- BOTÕES DE NAVEGAÇÃO -->
-          <div class="pt-5 border-t border-slate-100 mt-5 flex justify-between gap-2" id="nav-actions">
-            <button type="button" id="btn-back" onclick="prevStep()" class="px-5 py-3 rounded-2xl border border-slate-200 text-xs font-extrabold text-slate-600 hover:bg-slate-50 transition-all">
+          <div class="pt-6 border-t border-slate-100 mt-6 flex justify-between gap-3" id="nav-actions">
+            <button type="button" id="btn-back" onclick="prevStep()" class="px-5 py-3.5 rounded-2xl border border-slate-200 text-xs font-black text-slate-600 hover:bg-slate-50 transition-all">
               Voltar
             </button>
-            <button type="button" id="btn-next" onclick="nextStep()" class="px-7 py-3 rounded-2xl bg-brand-navy hover:bg-slate-900 active:scale-95 text-white text-xs font-black transition-all ml-auto">
+            <button type="button" id="btn-next" onclick="nextStep()" class="px-7 py-3.5 rounded-2xl bg-brand-navy hover:bg-slate-900 active:scale-95 text-white text-xs font-black transition-all ml-auto shadow-md">
               Avançar
             </button>
           </div>
@@ -412,43 +450,76 @@
     </section>
 
     <!-- PRODUTOS FUTUROS (PREPARAÇÃO) -->
-    <section class="py-8 bg-brand-ice/30 border-t border-blue-100 text-center px-4">
-      <span class="text-[11px] font-black text-brand-navy uppercase tracking-widest block">Linha Automotiva & Brindes</span>
-      <p class="text-xs text-slate-500 font-medium mt-1 max-w-sm mx-auto">
-        Também produzimos <strong>lixeirinhas de marcha personalizadas</strong> para automóveis e outros itens sob consulta.
-      </p>
+    <section class="py-8 bg-brand-ice/40 border-t border-blue-100 text-center px-4">
+      <div class="max-w-md mx-auto space-y-1">
+        <span class="text-[11px] font-black text-brand-navy uppercase tracking-widest block">Linha Automotiva & Brindes</span>
+        <p class="text-xs text-slate-500 font-medium leading-relaxed">
+          Também fabricamos <strong>lixeirinhas de marcha personalizadas</strong> para automóveis e outros itens sob consulta.
+        </p>
+      </div>
     </section>
 
   </main>
 
   <!-- RODAPÉ -->
-  <footer class="bg-brand-navy text-white py-6 px-4 text-xs">
-    <div class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-3">
-      <div class="flex items-center gap-2">
-        <span class="font-black text-sm">MANANCIAL STYLLO</span>
-        <span class="text-blue-200 text-xs">• Nova Friburgo/RJ</span>
+  <footer class="bg-brand-navy text-white py-8 px-4 text-xs">
+    <div class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div class="flex items-center gap-2.5">
+        <div class="w-7 h-7 rounded-lg bg-white/10 flex items-center justify-center font-black text-white text-xs border border-white/20">MS</div>
+        <div>
+          <span class="font-black text-sm block">MANANCIAL STYLLO</span>
+          <span class="text-blue-200 text-[10px] uppercase font-bold">Camisas Personalizadas • Nova Friburgo/RJ</span>
+        </div>
       </div>
-      <div class="text-blue-200 font-bold">
-        WhatsApp: (22) 99845-1339
+      <div class="text-blue-200 font-extrabold text-xs">
+        WhatsApp Oficial: (22) 99845-1339
       </div>
     </div>
-    <div class="text-center text-slate-400 text-[11px] mt-3">
-      © <span id="year"></span> Manancial Styllo — Camisas Personalizadas. Todos os direitos reservados.
+    <div class="text-center text-slate-400 text-[11px] mt-4 pt-4 border-t border-white/10">
+      © <span id="year"></span> Manancial Styllo. Todos os direitos reservados.
     </div>
   </footer>
 
   <!-- SCRIPT COMPLETO OTIMIZADO -->
   <script>
-    // CONFIGURAÇÃO CENTRALIZADA COM NÚMERO OFICIAL
+    // CONFIGURAÇÃO CENTRALIZADA
     const CONFIG = {
       phone: "5522998451339", // Oficial Manancial Styllo (Nova Friburgo - RJ)
-      purposes: ["Empresa / Uniforme", "Igreja / Congresso", "Evento / Campanha", "Turma / Excursão", "Equipe / Time", "Outro"],
-      models: ["Camisa Tradicional", "Baby Look", "Outro Modelo", "Preciso de Orientação"],
-      fabrics: ["Algodão", "PV (Poliviscose)", "PP (100% Poliéster)", "Dry Fit", "Romantic", "Microfibra", "Outro", "Preciso de Orientação"],
-      collars: ["Gola redonda", "Gola V", "Gola reta", "Gola aberta", "Outra", "Preciso de Orientação"],
-      techniques: ["Silk (1 cor)", "Silk (2 cores)", "Silk (3+ cores)", "DTF", "Sublimação", "Bordado", "Outra", "Preciso de Orientação"],
-      locations: ["Frente", "Costas", "Manga", "Outro local"],
-      artOptions: ["Sim, tenho a arte pronta", "Não, preciso que a empresa crie", "Tenho ideia e preciso de orientação"],
+      purposes: [
+        { label: "Empresas & Uniformes", emoji: "🏢" },
+        { label: "Igrejas & Congressos", emoji: "⛪" },
+        { label: "Eventos & Campanhas", emoji: "🎉" },
+        { label: "Turmas & Excursões", emoji: "🚌" },
+        { label: "Equipes & Times", emoji: "⚡" },
+        { label: "Uso Próprio / Outro", emoji: "👕" }
+      ],
+      models: [
+        { label: "Camisa Tradicional", desc: "Corte reto unisex clássico, veste todos." },
+        { label: "Baby Look", desc: "Modelagem feminina ajustada ao corpo." },
+        { label: "Regata / Outro", desc: "Regatas ou corte especial." },
+        { label: "Preciso de Ajuda", desc: "Orientamos você na escolha ideal." }
+      ],
+      fabrics: [
+        { name: "Algodão Conforto", desc: "Macio, fresco e confortável para o dia a dia e uniformes." },
+        { name: "Dry Fit Esportivo", desc: "Leve, respirável, não esquenta e seca rápido." },
+        { name: "PV (Malha Fria)", desc: "Muito durável, quase não amassa e não desbota." },
+        { name: "PP (100% Poliéster)", desc: "Ideal para estampas coloridas por sublimação." },
+        { name: "Outro Tecido", desc: "Romantic, microfibra ou especificação especial." },
+        { name: "Preciso de Orientação", desc: "Indique o que deseja e indicamos o tecido." }
+      ],
+      collars: ["Gola Redonda (Careca)", "Gola V", "Gola Polo", "Outra Gola", "Preciso de Orientação"],
+      locations: [
+        { id: "peito", label: "Frente Pequena (Peito)", hint: "Logo no peito esquerdo ou direito" },
+        { id: "frente_grande", label: "Frente Grande (Centro)", hint: "Arte central no peito" },
+        { id: "costas", label: "Costas", hint: "Frase ou logo grande atrás" },
+        { id: "manga", label: "Manga(s)", hint: "Detalhe ou patrocínio no braço" }
+      ],
+      colorOptions: ["1 Cor só", "2 Cores", "Várias Cores / Foto", "Não tenho certeza"],
+      artOptions: [
+        { label: "Sim, já tenho a arte pronta", desc: "Tenho o arquivo em alta qualidade ou vetor." },
+        { label: "Tenho uma ideia, preciso que criem", desc: "Tenho imagens de inspiração e textos." },
+        { label: "Preciso de orientação da equipe", desc: "Gostaria de ver o que fica melhor." }
+      ],
       cSizes: ["PP infantil", "P infantil", "M infantil", "G infantil"],
       aSizes: ["PP", "P", "M", "G", "GG", "XG", "G1", "XGG"]
     };
@@ -473,12 +544,11 @@
         sleeve: "Manga curta",
         color: "",
         obs: "",
-        technique: "",
-        locations: [],
+        locations: [], // Array de locais marcados
+        colorsCount: "",
         printDesc: "",
         artStatus: "",
         artNotes: "",
-        fileRef: null,
         sizes: sz
       };
     }
@@ -497,22 +567,31 @@
     function initUI() {
       // Finalidades
       document.getElementById('grid-purposes').innerHTML = CONFIG.purposes.map(p => `
-        <button type="button" onclick="selectPurpose('${p}')" class="btn-choice purpose-btn p-3 rounded-2xl border border-slate-200 text-xs font-bold bg-white text-left">${p}</button>
+        <button type="button" onclick="selectPurpose('${p.label}')" class="btn-card purpose-btn p-3 rounded-2xl border border-slate-200 text-xs font-bold bg-white text-left flex items-center gap-2">
+          <span class="text-base">${p.emoji}</span>
+          <span>${p.label}</span>
+        </button>
       `).join('');
 
       // Modelos
       document.getElementById('grid-models').innerHTML = CONFIG.models.map(m => `
-        <button type="button" onclick="selectModel('${m}')" class="btn-choice model-btn p-3.5 rounded-2xl border border-slate-200 text-xs font-bold bg-white text-left">${m}</button>
+        <button type="button" onclick="selectModel('${m.label}')" class="btn-card model-btn p-3.5 rounded-2xl border border-slate-200 text-left bg-white">
+          <span class="font-extrabold text-xs block text-brand-navy">${m.label}</span>
+          <span class="text-[11px] text-slate-400 font-medium block mt-0.5">${m.desc}</span>
+        </button>
       `).join('');
 
       // Tecidos
       document.getElementById('grid-fabrics').innerHTML = CONFIG.fabrics.map(f => `
-        <button type="button" onclick="selectFabric('${f}')" class="btn-choice fabric-btn p-3.5 rounded-2xl border border-slate-200 text-xs font-bold bg-white text-left">${f}</button>
+        <button type="button" onclick="selectFabric('${f.name}')" class="btn-card fabric-btn p-3.5 rounded-2xl border border-slate-200 text-left bg-white">
+          <span class="font-extrabold text-xs block text-brand-navy">${f.name}</span>
+          <span class="text-[11px] text-slate-400 font-medium block mt-0.5">${f.desc}</span>
+        </button>
       `).join('');
 
       // Tamanhos
       const rSize = (s) => `
-        <div class="bg-white p-2 rounded-2xl border border-slate-200 flex flex-col items-center">
+        <div class="bg-white p-2 rounded-2xl border border-slate-200 flex flex-col items-center shadow-xs">
           <span class="text-[11px] font-extrabold text-brand-navy mb-1">${s}</span>
           <div class="flex items-center w-full justify-between gap-1">
             <button type="button" onclick="adjustSize('${s}', -1)" class="w-6 h-6 rounded-lg bg-slate-100 text-slate-700 font-black text-xs active:scale-90">-</button>
@@ -526,27 +605,39 @@
 
       // Golas
       document.getElementById('grid-collars').innerHTML = CONFIG.collars.map(c => `
-        <button type="button" onclick="selectCollar('${c}')" class="btn-choice collar-btn p-3 rounded-2xl border border-slate-200 text-xs font-bold bg-white">${c}</button>
+        <button type="button" onclick="selectCollar('${c}')" class="btn-card collar-btn p-3 rounded-2xl border border-slate-200 text-xs font-bold bg-white">${c}</button>
       `).join('');
 
-      // Técnicas
-      document.getElementById('grid-techniques').innerHTML = CONFIG.techniques.map(t => `
-        <button type="button" onclick="selectTechnique('${t}')" class="btn-choice tech-btn p-3 rounded-2xl border border-slate-200 text-xs font-bold bg-white text-left">${t}</button>
+      // Locais de Estampa (Múltipla Escolha com Checkbox)
+      document.getElementById('print-locations-container').innerHTML = CONFIG.locations.map(loc => `
+        <div onclick="togglePrintLocation('${loc.label}')" id="card-loc-${clean(loc.id)}" class="p-3.5 rounded-2xl border border-slate-200 bg-white cursor-pointer select-none flex items-start gap-3 transition-all hover:border-brand-electric">
+          <div id="check-loc-${clean(loc.id)}" class="check-box w-5 h-5 rounded-lg border-2 border-slate-300 flex items-center justify-center text-xs font-black flex-shrink-0 mt-0.5">
+            ✓
+          </div>
+          <div>
+            <span class="font-bold text-xs block text-brand-navy">${loc.label}</span>
+            <span class="text-[11px] text-slate-400 font-medium block">${loc.hint}</span>
+          </div>
+        </div>
       `).join('');
 
-      // Locais
-      document.getElementById('grid-locations').innerHTML = CONFIG.locations.map(l => `
-        <button type="button" onclick="toggleLocation('${l}')" id="loc-${clean(l)}" class="p-2.5 rounded-2xl border border-slate-200 text-xs font-bold bg-white">${l}</button>
+      // Cores da Estampa
+      document.getElementById('grid-colors-count').innerHTML = CONFIG.colorOptions.map(opt => `
+        <button type="button" onclick="selectColorsCount('${opt}')" class="btn-card color-btn p-3 rounded-2xl border border-slate-200 text-xs font-bold bg-white text-center">${opt}</button>
       `).join('');
 
       // Arte
       document.getElementById('grid-art').innerHTML = CONFIG.artOptions.map(a => `
-        <button type="button" onclick="selectArt('${a}')" class="btn-choice art-btn w-full p-3.5 rounded-2xl border border-slate-200 text-xs font-bold bg-white text-left">${a}</button>
+        <button type="button" onclick="selectArt('${a.label}')" class="btn-card art-btn w-full p-3.5 rounded-2xl border border-slate-200 text-left bg-white">
+          <span class="font-extrabold text-xs block text-brand-navy">${a.label}</span>
+          <span class="text-[11px] text-slate-400 font-medium block mt-0.5">${a.desc}</span>
+        </button>
       `).join('');
     }
 
     function clean(str) { return str.replace(/[^a-zA-Z0-9]/g, '_'); }
 
+    // SELEÇÕES
     function selectPurpose(p) {
       state.customer.purpose = p;
       markActive('.purpose-btn', p);
@@ -562,8 +653,8 @@
 
     function setTapaBumbum(val) {
       state.items[state.currIdx].hasTapaBumbum = val;
-      document.getElementById('tb-sem').className = `p-2.5 rounded-xl border text-xs font-bold ${!val ? 'bg-brand-electric text-white' : 'bg-white'}`;
-      document.getElementById('tb-com').className = `p-2.5 rounded-xl border text-xs font-bold ${val ? 'bg-brand-electric text-white' : 'bg-white'}`;
+      document.getElementById('tb-sem').className = `p-3 rounded-2xl border text-xs font-bold ${!val ? 'bg-brand-electric text-white' : 'bg-white'}`;
+      document.getElementById('tb-com').className = `p-3 rounded-2xl border text-xs font-bold ${val ? 'bg-brand-electric text-white' : 'bg-white'}`;
     }
 
     function selectFabric(f) {
@@ -598,7 +689,7 @@
 
       let grand = 0;
       state.items.forEach(item => Object.values(item.sizes).forEach(q => grand += q));
-      document.getElementById('txt-total-counter').textContent = `${grand} peças no total`;
+      document.getElementById('txt-total-counter').textContent = `Total: ${grand} peças`;
     }
 
     function selectCollar(c) {
@@ -608,21 +699,51 @@
 
     function setSleeve(type) {
       state.items[state.currIdx].sleeve = type;
-      document.getElementById('slv-curta').className = `p-3 rounded-2xl border text-xs font-bold ${type === 'Manga curta' ? 'bg-brand-electric text-white' : 'bg-white'}`;
-      document.getElementById('slv-longa').className = `p-3 rounded-2xl border text-xs font-bold ${type === 'Manga longa' ? 'bg-brand-electric text-white' : 'bg-white'}`;
+      document.getElementById('slv-curta').className = `p-3.5 rounded-2xl border text-xs font-bold ${type === 'Manga curta' ? 'bg-brand-electric text-white' : 'bg-white'}`;
+      document.getElementById('slv-longa').className = `p-3.5 rounded-2xl border text-xs font-bold ${type === 'Manga longa' ? 'bg-brand-electric text-white' : 'bg-white'}`;
     }
 
-    function selectTechnique(t) {
-      state.items[state.currIdx].technique = t;
-      markActive('.tech-btn', t);
-    }
-
-    function toggleLocation(l) {
+    // MÚLTIPLA ESCOLHA DE LOCAIS DE ESTAMPA
+    function togglePrintLocation(locLabel) {
       const it = state.items[state.currIdx];
-      const idx = it.locations.indexOf(l);
-      if (idx > -1) it.locations.splice(idx, 1);
-      else it.locations.push(l);
-      document.getElementById(`loc-${clean(l)}`).classList.toggle('active', it.locations.includes(l));
+      const idx = it.locations.indexOf(locLabel);
+
+      if (idx > -1) {
+        it.locations.splice(idx, 1);
+      } else {
+        it.locations.push(locLabel);
+      }
+      updateLocationsUI();
+    }
+
+    function updateLocationsUI() {
+      const it = state.items[state.currIdx];
+      
+      CONFIG.locations.forEach(loc => {
+        const card = document.getElementById(`card-loc-${clean(loc.id)}`);
+        const check = document.getElementById(`check-loc-${clean(loc.id)}`);
+        const isSelected = it.locations.includes(loc.label);
+
+        if (isSelected) {
+          card.classList.add('border-brand-electric', 'bg-brand-ice');
+          check.classList.add('active');
+        } else {
+          card.classList.remove('border-brand-electric', 'bg-brand-ice');
+          check.classList.remove('active');
+        }
+      });
+
+      const label = document.getElementById('txt-selected-locations');
+      if (it.locations.length === 0) {
+        label.textContent = "Nenhum marcado ainda";
+      } else {
+        label.textContent = `${it.locations.length} local(is): ${it.locations.join(' + ')}`;
+      }
+    }
+
+    function selectColorsCount(opt) {
+      state.items[state.currIdx].colorsCount = opt;
+      markActive('.color-btn', opt);
     }
 
     function selectArt(a) {
@@ -630,22 +751,9 @@
       markActive('.art-btn', a);
     }
 
-    function handleFileSelect(e) {
-      const f = e.target.files[0];
-      const msg = document.getElementById('txt-file-ref');
-      if (f) {
-        state.items[state.currIdx].fileRef = f.name;
-        msg.textContent = `Arquivo "${f.name}" selecionado. Lembre-se de anexá-lo na conversa do WhatsApp.`;
-        msg.classList.remove('hidden');
-      } else {
-        state.items[state.currIdx].fileRef = null;
-        msg.classList.add('hidden');
-      }
-    }
-
     function markActive(selector, text) {
       document.querySelectorAll(selector).forEach(b => {
-        b.classList.toggle('active', b.textContent.trim().startsWith(text));
+        b.classList.toggle('active', b.textContent.trim().includes(text));
       });
     }
 
@@ -659,19 +767,27 @@
       document.getElementById(`step-${s}`).classList.remove('hidden');
 
       const titles = [
-        "1. Finalidade", "2. Modelo", "3. Tecido", "4. Tamanhos", "5. Gola e Peça",
-        "6. Estampa", "7. Arte", "8. Itens do Pedido", "9. Seus Dados", "10. Revisão"
+        "1. Finalidade", "2. Modelo", "3. Tecido", "4. Tamanhos", "5. Gola e Cor",
+        "6. Estampa", "7. Situação da Arte", "8. Camisas do Pedido", "9. Seus Dados", "10. Revisão"
       ];
       document.getElementById('txt-step-name').textContent = titles[s - 1];
       document.getElementById('txt-step-count').textContent = `Etapa ${s} de 10`;
       document.getElementById('bar-fill').style.width = `${s * 10}%`;
-      document.getElementById('txt-item-badge').textContent = `Configurando: ${state.items[state.currIdx].title}`;
+      document.getElementById('txt-item-badge').textContent = state.items[state.currIdx].title;
 
       document.getElementById('btn-back').style.visibility = s === 1 ? 'hidden' : 'visible';
       document.getElementById('btn-next').style.display = (s === 8 || s === 10) ? 'none' : 'block';
 
+      if (s === 6) updateLocationsUI();
       if (s === 8) renderStep8();
       if (s === 10) renderStep10();
+
+      const card = document.getElementById('configurador');
+      if (card) {
+        const yOffset = -70;
+        const y = card.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
     }
 
     function nextStep() { if (state.step < 10) goToStep(state.step + 1); }
@@ -711,7 +827,10 @@
         if (!it.collar) { alert("Selecione o tipo de gola."); return false; }
         if (!document.getElementById('inp-color').value.trim()) { alert("Informe a cor desejada."); return false; }
       }
-      if (s === 6 && !it.technique) { alert("Escolha a técnica de personalização."); return false; }
+      if (s === 6) {
+        if (it.locations.length === 0) { alert("Marque pelo menos um local para a estampa (ex: Frente, Costas ou Manga)."); return false; }
+        if (!it.colorsCount) { alert("Informe quantas cores tem a estampa."); return false; }
+      }
       if (s === 7 && !it.artStatus) { alert("Informe a situação da sua arte."); return false; }
       if (s === 9) {
         if (!document.getElementById('inp-cname').value.trim() || !document.getElementById('inp-cphone').value.trim() || !document.getElementById('inp-ccity').value.trim()) {
@@ -736,15 +855,16 @@
         const sz = [];
         Object.entries(it.sizes).forEach(([k, v]) => { if (v > 0) { tot += v; sz.push(`${k}: ${v}`); } });
         return `
-          <div class="p-3.5 bg-brand-ice/40 border border-blue-200 rounded-2xl flex justify-between items-center text-xs">
+          <div class="p-4 bg-brand-ice/60 border border-blue-200 rounded-3xl flex justify-between items-center text-xs">
             <div>
               <span class="font-black text-brand-navy">${it.title}: ${it.model} ${it.hasTapaBumbum ? '(c/ tapa-bumbum)' : ''}</span>
-              <p class="text-slate-500 font-medium">${it.fabric} • Gola ${it.collar} • ${it.color} • <strong>${tot} peças</strong></p>
-              <p class="text-[10px] text-slate-400 font-bold mt-0.5">${sz.join(', ')}</p>
+              <p class="text-slate-500 font-medium mt-0.5">${it.fabric} • Gola ${it.collar} • ${it.color} • <strong>${tot} peças</strong></p>
+              <p class="text-brand-electric font-bold text-[11px] mt-0.5">Estampa: ${it.locations.join(', ')} (${it.colorsCount})</p>
+              <p class="text-[10px] text-slate-400 font-bold mt-1">${sz.join(' | ')}</p>
             </div>
-            <div class="flex gap-1.5">
-              <button type="button" onclick="editItem(${idx})" class="px-2.5 py-1.5 border border-slate-200 rounded-xl bg-white font-extrabold text-slate-700">Editar</button>
-              ${state.items.length > 1 ? `<button type="button" onclick="removeItem(${idx})" class="px-2.5 py-1.5 border border-rose-200 rounded-xl bg-white text-rose-600 font-extrabold">Excluir</button>` : ''}
+            <div class="flex gap-2">
+              <button type="button" onclick="editItem(${idx})" class="px-3 py-2 border border-slate-200 rounded-xl bg-white font-black text-slate-700">Editar</button>
+              ${state.items.length > 1 ? `<button type="button" onclick="removeItem(${idx})" class="px-3 py-2 border border-rose-200 rounded-xl bg-white text-rose-600 font-black">Excluir</button>` : ''}
             </div>
           </div>
         `;
@@ -776,10 +896,8 @@
       setSleeve(it.sleeve);
       document.getElementById('inp-color').value = it.color || '';
       document.getElementById('inp-obs').value = it.obs || '';
-      markActive('.tech-btn', it.technique);
-      CONFIG.locations.forEach(l => {
-        document.getElementById(`loc-${clean(l)}`).classList.toggle('active', it.locations.includes(l));
-      });
+      updateLocationsUI();
+      markActive('.color-btn', it.colorsCount);
       document.getElementById('inp-print-desc').value = it.printDesc || '';
       markActive('.art-btn', it.artStatus);
       document.getElementById('inp-art-notes').value = it.artNotes || '';
@@ -805,20 +923,21 @@
         const sz = [];
         Object.entries(it.sizes).forEach(([k, v]) => { if (v > 0) { tot += v; grand += v; sz.push(`${k}: ${v}`); } });
         return `
-          <div class="p-3 bg-white border border-blue-100 rounded-xl">
+          <div class="p-3.5 bg-white border border-blue-100 rounded-2xl space-y-1">
             <div class="flex justify-between font-black text-brand-navy">
               <span>${it.title}: ${it.model} ${it.hasTapaBumbum ? '(c/ tapa-bumbum)' : ''}</span>
               <span class="text-brand-electric font-black">${tot} peças</span>
             </div>
-            <p class="text-slate-500 font-medium text-[11px]">${it.fabric} • ${it.collar} • ${it.sleeve} • Cor: ${it.color}</p>
-            <p class="text-slate-500 font-medium text-[11px]">Estampa: ${it.technique} ${it.locations.length ? `(${it.locations.join(', ')})` : ''}</p>
-            <p class="text-slate-700 font-bold text-[10px] mt-1">Tamanhos: ${sz.join(' | ')}</p>
+            <p class="text-slate-500 font-medium text-[11px]">${it.fabric} • Gola ${it.collar} • ${it.sleeve} • Cor: ${it.color}</p>
+            <p class="text-brand-electric font-bold text-[11px]">Estampa: ${it.locations.join(' + ')} (${it.colorsCount})</p>
+            ${it.printDesc ? `<p class="text-slate-500 text-[10px]">Detalhes: ${it.printDesc}</p>` : ''}
+            <p class="text-slate-700 font-extrabold text-[10px] pt-0.5">Tamanhos: ${sz.join(' | ')}</p>
           </div>
         `;
       }).join('');
     }
 
-    // ENVIO PARA O WHATSAPP COM NÚMERO OFICIAL
+    // ENVIO PARA O WHATSAPP COM NÚMERO OFICIAL DE NOVA FRIBURGO
     function sendToWhatsApp() {
       saveInputs();
 
@@ -850,18 +969,18 @@
         msg += `• *Tecido:* ${it.fabric}\n`;
         msg += `• *Gola:* ${it.collar} | *Manga:* ${it.sleeve}\n`;
         msg += `• *Cor:* ${it.color}\n`;
-        msg += `• *Estampa:* ${it.technique}\n`;
-        if (it.locations.length) msg += `• *Locais:* ${it.locations.join(', ')}\n`;
+        msg += `• *Estampa:* ${it.locations.join(' + ')}\n`;
+        msg += `• *Cores da estampa:* ${it.colorsCount}\n`;
         if (it.printDesc) msg += `• *Detalhes da arte:* ${it.printDesc}\n`;
         msg += `• *Situação da arte:* ${it.artStatus}\n`;
-        if (it.fileRef) msg += `• *Arquivo referência:* "${it.fileRef}" (vou enviar anexo nesta conversa)\n`;
-        msg += `• *Tamanhos:* ${sz.join(' | ')}\n`;
+        if (it.artNotes) msg += `• *Obs. da arte:* ${it.artNotes}\n`;
+        msg += `• *Grade de Tamanhos:* ${sz.join(' | ')}\n`;
         msg += `• *Subtotal:* ${tot} peças\n`;
       });
 
       msg += `\n-------------------------------------------\n`;
       msg += `*TOTAL GERAL:* ${grand} peças\n`;
-      if (state.customer.notes) msg += `*Observações:* ${state.customer.notes}\n`;
+      if (state.customer.notes) msg += `*Observações Gerais:* ${state.customer.notes}\n`;
       msg += `\n_Mensagem gerada pelo site Manancial Styllo. Aguardo orçamento com valores e prazos._`;
 
       window.open(`https://wa.me/${CONFIG.phone}?text=${encodeURIComponent(msg)}`, '_blank');
